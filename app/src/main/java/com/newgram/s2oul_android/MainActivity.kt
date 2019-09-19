@@ -4,6 +4,8 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import kotlinx.android.synthetic.main.activity_main.*
+import org.jetbrains.anko.sdk27.coroutines.onClick
+import org.jetbrains.anko.startActivity
 
 class MainActivity : AppCompatActivity() {
 
@@ -13,13 +15,13 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        main_goSearch_iv.onClick { startActivity<SearchActivity>()}
+
         supportFragmentManager.beginTransaction().run {
             replace(R.id.main_frame, RecommendFragment())
             commit()
         }
         main_menu.setOnNavigationItemSelectedListener(navigationItemSelectedListner)
-
-
     }
 
     private val navigationItemSelectedListner = BottomNavigationView.OnNavigationItemSelectedListener { item ->

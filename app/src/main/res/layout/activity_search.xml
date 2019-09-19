@@ -6,5 +6,36 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context=".SearchActivity">
+    <androidx.appcompat.widget.Toolbar
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimary"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" app:layout_constraintHorizontal_bias="1.0">
+        <ImageView
+                android:id="@+id/search_cancel_iv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_cancel"
+                android:layout_gravity="left" tools:layout_editor_absoluteY="16dp"
+                tools:layout_editor_absoluteX="16dp"/>
+
+        <androidx.appcompat.widget.SearchView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center">
+
+        </androidx.appcompat.widget.SearchView>
+
+        <ImageView
+                android:id="@+id/search_filter_iv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_filter"
+                android:layout_gravity="right"
+                android:layout_marginRight="25dp"/>
+
+    </androidx.appcompat.widget.Toolbar>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

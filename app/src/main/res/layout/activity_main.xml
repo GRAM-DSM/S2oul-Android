@@ -13,11 +13,17 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" android:id="@+id/toolbar">
-        <LinearLayout android:layout_width="match_parent" android:layout_height="match_parent">
-            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-                      android:text="S2oul"/>
+        <ImageView
+                android:id="@+id/main_goSearch_iv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_search"/>
 
-        </LinearLayout>
+        <TextView
+                android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="S2oul"
+                android:layout_gravity="center"
+                android:textColor="#FFFFFF"/>
 
     </androidx.appcompat.widget.Toolbar>
 
