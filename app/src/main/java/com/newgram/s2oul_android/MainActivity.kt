@@ -18,6 +18,8 @@ class MainActivity : AppCompatActivity() {
             commit()
         }
         main_menu.setOnNavigationItemSelectedListener(navigationItemSelectedListner)
+
+
     }
 
     private val navigationItemSelectedListner = BottomNavigationView.OnNavigationItemSelectedListener { item ->
