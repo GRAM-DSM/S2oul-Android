@@ -24,6 +24,7 @@
             android:text="TextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:fontFamily="@font/seoulnamsan_eb"
             android:id="@+id/searchHistory_history_tv" app:layout_constraintStart_toEndOf="@+id/searchHistory_history_iv"
             android:layout_marginStart="32dp" app:layout_constraintTop_toTopOf="parent" android:layout_marginTop="8dp"
             app:layout_constraintBottom_toBottomOf="parent" android:layout_marginBottom="8dp"/>
