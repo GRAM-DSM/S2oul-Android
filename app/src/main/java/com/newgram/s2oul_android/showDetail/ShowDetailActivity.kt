@@ -18,5 +18,9 @@ class ShowDetailActivity : AppCompatActivity() {
             startActivity<ShowDetailActivity>("name" to "name")
         }
 
+        showDetail_ticketing_btn.onClick {
+
+        }
+
     }
 }
