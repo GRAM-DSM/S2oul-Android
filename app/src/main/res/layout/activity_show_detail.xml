@@ -5,7 +5,7 @@
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".ShowDetailActivity">
+        tools:context=".showDetail.ShowDetailActivity">
 
     <LinearLayout
             android:orientation="horizontal"
@@ -19,13 +19,13 @@
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:text="가격: "
-                android:fontFamily="@font/seoulnamsan_eb"
+                android:fontFamily="@font/seoulnamsan_b"
                 android:textSize="14dp" android:id="@+id/showDetail_tv"/>
         <TextView
                 android:id="@+id/showDetail_price_tv"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:fontFamily="@font/seoulnamsan_eb"
+                android:fontFamily="@font/seoulnamsan_b"
                 android:textSize="14sp"/>
     </LinearLayout>
     <androidx.appcompat.widget.Toolbar
@@ -101,14 +101,14 @@
             android:orientation="horizontal"
             app:layout_constraintStart_toStartOf="parent"
             android:layout_marginStart="24dp" app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="24dp"
-            android:id="@+id/recyclerView" app:layout_constraintTop_toBottomOf="@+id/imageView5"
+            android:id="@+id/showDetail_rv" app:layout_constraintTop_toBottomOf="@+id/imageView5"
             app:layout_constraintBottom_toTopOf="@+id/imageView4" android:layout_marginTop="8dp"
             android:layout_marginBottom="8dp"/>
     <ImageView
             android:layout_width="72dp"
             android:layout_height="52dp" tools:srcCompat="@tools:sample/avatars"
             android:id="@+id/imageView3" android:layout_marginBottom="8dp"
-            app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintTop_toBottomOf="@+id/recyclerView"
+            app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintTop_toBottomOf="@+id/showDetail_rv"
             app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="8dp" android:layout_marginTop="8dp"/>
     <ImageView
             android:layout_width="328dp"
@@ -135,10 +135,10 @@
                 android:text="장소: "
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" android:id="@+id/textView"
-                android:fontFamily="@font/seoulnamsan_eb"/>
+                android:fontFamily="@font/seoulnamsan_b"/>
         <TextView
                 android:layout_width="wrap_content"
-                android:fontFamily="@font/seoulnamsan_eb"
+                android:fontFamily="@font/seoulnamsan_b"
                 android:layout_height="wrap_content" android:id="@+id/showDetail_place_tv"/>
     </LinearLayout>
     <LinearLayout
@@ -151,11 +151,11 @@
         <TextView
                 android:text="러닝타임: "
                 android:layout_width="wrap_content"
-                android:fontFamily="@font/seoulnamsan_eb"
+                android:fontFamily="@font/seoulnamsan_b"
                 android:layout_height="wrap_content" android:id="@+id/textView3"/>
         <TextView
                 android:layout_width="wrap_content"
-                android:fontFamily="@font/seoulnamsan_eb"
+                android:fontFamily="@font/seoulnamsan_b"
                 android:layout_height="wrap_content" android:id="@+id/showDetail_time_tv"/>
     </LinearLayout>
     <TextView
