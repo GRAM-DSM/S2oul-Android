@@ -19,13 +19,11 @@
                 android:layout_height="wrap_content"
                 android:src="@drawable/ic_search"/>
 
-        <TextView
-                android:layout_width="wrap_content" android:layout_height="wrap_content"
-                android:text="S2oul"
+        <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:textColor="#FFFFFF"
-                android:fontFamily="@font/seoulnamsan_eb"
-                android:textSize="40dp"/>
+                android:src="@mipmap/ic_logo" tools:layout_editor_absoluteX="170dp"/>
 
     </androidx.appcompat.widget.Toolbar>
 
