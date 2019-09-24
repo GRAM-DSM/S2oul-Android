@@ -12,6 +12,11 @@ import com.newgram.s2oul_android.entities.Showing
 import kotlinx.android.synthetic.main.item_placedetail_shows.view.*
 
 class PlaceDetailAdapater(val context: Context, val items: List<Showing>): RecyclerView.Adapter<PlaceDetailAdapater.PlaceDetailViewHolder>() {
+    interface ItemClick {
+        fun onClick(v: View, position: Int)
+    }
+
+    var itemClick: ItemClick? = null
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PlaceDetailViewHolder {
         return PlaceDetailViewHolder(LayoutInflater.from(context).inflate(R.layout.item_placedetail_shows, parent, false))
@@ -21,6 +26,11 @@ class PlaceDetailAdapater(val context: Context, val items: List<Showing>): Recyc
         holder.run {
             items[position].let {
                 bind(it)
+            }
+        }
+        if(itemClick != null) {
+            holder?.itemView?.setOnClickListener { v ->
+                itemClick?.onClick(v, position)
             }
         }
     }

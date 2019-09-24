@@ -1,7 +1,10 @@
 package com.newgram.s2oul_android.placeDetail
 
 import android.os.Bundle
+import android.view.View
 import androidx.appcompat.app.AppCompatActivity
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.newgram.s2oul_android.R
 import com.newgram.s2oul_android.entities.Showing
 import com.newgram.s2oul_android.showDetail.ShowDetailActivity
@@ -22,10 +25,12 @@ class PlaceDetailActivity : AppCompatActivity() {
         placeDetail_address_tv.text
         placeDetail_sitcount_tv.text
 
+        adapter.itemClick = object: PlaceDetailAdapater.ItemClick {
+            override fun onClick(v: View, position: Int) {
+                startActivity<ShowDetailActivity>("name" to "")
+            }
+        }
         placeDetail_rv.adapter = adapter
-    }
-
-    fun goShowDetail(name: String) {
-        startActivity<ShowDetailActivity>("name" to name)
+        placeDetail_rv.layoutManager = LinearLayoutManager(this, RecyclerView.HORIZONTAL, false)
     }
 }
