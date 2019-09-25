@@ -12,6 +12,8 @@
             android:roundIcon="@mipmap/ic_logo_round"
             android:supportsRtl="true"
             android:theme="@style/AppTheme">
+        <activity android:name=".SearchDetailActivity">
+        </activity>
         <activity android:name=".placeDetail.PlaceDetailActivity">
         </activity>
         <activity android:name=".showDetail.ShowDetailActivity">

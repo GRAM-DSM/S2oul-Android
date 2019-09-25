@@ -1,5 +1,7 @@
 package com.newgram.s2oul_android.showDetail
 
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.newgram.s2oul_android.R
@@ -8,6 +10,8 @@ import org.jetbrains.anko.sdk27.coroutines.onClick
 import org.jetbrains.anko.startActivity
 
 class ShowDetailActivity : AppCompatActivity() {
+
+    lateinit var uri: String
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -19,7 +23,8 @@ class ShowDetailActivity : AppCompatActivity() {
         }
 
         showDetail_ticketing_btn.onClick {
-
+            val intent = Intent(Intent.ACTION_VIEW, Uri.parse("http://${uri}"))
+            startActivity(intent)
         }
 
     }
