@@ -22,13 +22,17 @@
                 android:layout_gravity="left" tools:layout_editor_absoluteY="16dp"
                 tools:layout_editor_absoluteX="16dp"/>
 
-        <!--<EditText android:layout_width="match_parent"-->
-        <!--android:hint="검색어를 입력하세요"-->
-        <!--android:textColor="#FFFFFF"-->
-        <!--android:fontFamily="@font/seoulnamsan_eb"-->
-        <!--android:imeOptions="actionSearch"-->
-        <!--android:layout_height="wrap_content" android:id="@+id/search_et"-->
-        <!--tools:layout_editor_absoluteY="5dp" tools:layout_editor_absoluteX="31dp" android:singleLine="true"/>-->
+        <ImageView
+                android:id="@+id/search_filter_iv"
+                android:layout_width="19dp"
+                android:layout_height="19dp"
+                android:layout_marginRight="16dp"
+                android:src="@drawable/ic_filter"
+                android:layout_gravity="right"
+                tools:layout_editor_absoluteY="9dp"
+                tools:layout_editor_absoluteX="411dp"/>
+
+
         <androidx.appcompat.widget.SearchView
                 android:id="@+id/search_et"
                 android:layout_width="match_parent"
@@ -39,9 +43,9 @@
                 app:searchIcon="@null"
                 android:layout_marginStart="32dp"
                 android:focusableInTouchMode="false" tools:layout_editor_absoluteY="4dp"
-                tools:layout_editor_absoluteX="31dp">
+                tools:layout_editor_absoluteX="31dp"
+                android:layout_marginEnd="32dp">
         </androidx.appcompat.widget.SearchView>
-
     </androidx.appcompat.widget.Toolbar>
 
     <RadioGroup

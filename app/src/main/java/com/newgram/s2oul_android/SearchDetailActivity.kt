@@ -4,6 +4,8 @@ import android.os.Bundle
 import android.widget.RadioGroup
 import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_search_detail.*
+import org.jetbrains.anko.sdk27.coroutines.onClick
+import org.jetbrains.anko.startActivity
 
 class SearchDetailActivity : AppCompatActivity() {
 
@@ -16,6 +18,10 @@ class SearchDetailActivity : AppCompatActivity() {
                 .commit()
         }
         search_radio_group.setOnCheckedChangeListener(radioCheckedChangeListener)
+
+        search_filter_iv.onClick{
+            startActivity<SearchFilterActivity>()
+        }
     }
 
     private val radioCheckedChangeListener = RadioGroup.OnCheckedChangeListener { item, i ->
@@ -35,4 +41,6 @@ class SearchDetailActivity : AppCompatActivity() {
 
         false
     }
+
+
 }
