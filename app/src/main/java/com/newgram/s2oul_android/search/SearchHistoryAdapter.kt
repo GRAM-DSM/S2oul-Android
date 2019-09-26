@@ -1,4 +1,4 @@
-package com.newgram.s2oul_android
+package com.newgram.s2oul_android.search
 
 import android.content.Context
 import android.util.Log
@@ -7,6 +7,8 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.newgram.s2oul_android.R
+import com.newgram.s2oul_android.dummy
 import java.util.*
 
 class SearchHistoryAdapter(var context: Context, val items: ArrayList<String>): RecyclerView.Adapter<SearchHistoryAdapter.SearchHistoryViewHolder>() {

@@ -8,10 +8,10 @@ import android.widget.ImageView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.newgram.s2oul_android.R
-import com.newgram.s2oul_android.entities.Showing
+import com.newgram.s2oul_android.entities.Show
 import kotlinx.android.synthetic.main.item_placedetail_shows.view.*
 
-class PlaceDetailAdapater(val context: Context, val items: List<Showing>): RecyclerView.Adapter<PlaceDetailAdapater.PlaceDetailViewHolder>() {
+class PlaceDetailAdapater(val context: Context, val items: List<Show>): RecyclerView.Adapter<PlaceDetailAdapater.PlaceDetailViewHolder>() {
     interface ItemClick {
         fun onClick(v: View, position: Int)
     }
@@ -41,7 +41,7 @@ class PlaceDetailAdapater(val context: Context, val items: List<Showing>): Recyc
 
     inner class PlaceDetailViewHolder(val view: View): RecyclerView.ViewHolder(view) {
         val image = itemView.findViewById<ImageView>(R.id.item_placedetail_iv)
-        fun bind(item: Showing) {
+        fun bind(item: Show) {
             with(view) {
                 Glide.with(image)
                     .load(item.showImage)

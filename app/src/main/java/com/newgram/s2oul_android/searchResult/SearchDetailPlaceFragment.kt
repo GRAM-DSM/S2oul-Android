@@ -1,10 +1,11 @@
-package com.newgram.s2oul_android
+package com.newgram.s2oul_android.searchResult
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import com.newgram.s2oul_android.R
 
 class SearchDetailPlaceFragment : Fragment() {
     override fun onCreate(savedInstanceState: Bundle?) {

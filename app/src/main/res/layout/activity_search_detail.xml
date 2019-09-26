@@ -5,7 +5,7 @@
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".SearchDetailActivity">
+        tools:context=".searchResult.SearchDetailActivity">
     <androidx.appcompat.widget.Toolbar
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -33,19 +33,20 @@
                 tools:layout_editor_absoluteX="411dp"/>
 
 
-        <androidx.appcompat.widget.SearchView
+        <EditText
+                android:textColor="#FFF"
                 android:id="@+id/search_et"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:focusable="false"
-                app:queryHint="검색어를 입력하세요."
-                app:iconifiedByDefault="false"
-                app:searchIcon="@null"
+                android:hint="검색어를 입력하세요."
+                android:imeOptions="actionSearch"
+                android:inputType="text"
+                android:fontFamily="@font/seoulnamsan_eb"
                 android:layout_marginStart="32dp"
-                android:focusableInTouchMode="false" tools:layout_editor_absoluteY="4dp"
+                tools:layout_editor_absoluteY="4dp"
                 tools:layout_editor_absoluteX="31dp"
                 android:layout_marginEnd="32dp">
-        </androidx.appcompat.widget.SearchView>
+        </EditText>
     </androidx.appcompat.widget.Toolbar>
 
     <RadioGroup

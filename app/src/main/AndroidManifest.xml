@@ -12,15 +12,15 @@
             android:roundIcon="@mipmap/ic_logo_round"
             android:supportsRtl="true"
             android:theme="@style/AppTheme">
-        <activity android:name=".SearchFilterActivity">
+        <activity android:name=".searchResult.SearchFilterActivity">
         </activity>
-        <activity android:name=".SearchDetailActivity">
+        <activity android:name=".searchResult.SearchDetailActivity">
         </activity>
         <activity android:name=".placeDetail.PlaceDetailActivity">
         </activity>
         <activity android:name=".showDetail.ShowDetailActivity">
         </activity>
-        <activity android:name=".SearchActivity">
+        <activity android:name=".search.SearchActivity">
         </activity>
         <activity android:name=".MainActivity">
             <intent-filter>

@@ -6,14 +6,14 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.newgram.s2oul_android.R
-import com.newgram.s2oul_android.entities.Showing
+import com.newgram.s2oul_android.entities.Show
 import com.newgram.s2oul_android.showDetail.ShowDetailActivity
 import kotlinx.android.synthetic.main.activity_place_detail.*
 import org.jetbrains.anko.startActivity
 
 class PlaceDetailActivity : AppCompatActivity() {
 
-    var items = ArrayList<Showing>()
+    var items = ArrayList<Show>()
     val adapter = PlaceDetailAdapater(this, items)
 
     override fun onCreate(savedInstanceState: Bundle?) {
