@@ -14,8 +14,8 @@ import org.jetbrains.anko.support.v4.find
 
 class RecommendFragment : Fragment() {
 
-    private val pics = arrayOf<Int>(R.drawable.ic_button, R.drawable.ic_cancel, R.drawable.ic_history)
-    lateinit var adapter: RecommendAdapter
+    private val pics = arrayOf(R.drawable.ic_button, R.drawable.ic_cancel, R.drawable.ic_history)
+    lateinit var recommendAdapter: RecommendAdapter
 
     private lateinit var layoutManager: CardSliderLayoutManager
     private var currentPosition: Int? = null
@@ -31,10 +31,10 @@ class RecommendFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        adapter = RecommendAdapter(context!!, pics)
+        recommendAdapter = RecommendAdapter(context!!, pics)
         initRecycleView()
         recommend_rv.apply {
-            //adapter =
+            adapter = recommendAdapter
             layoutManager = CardSliderLayoutManager(context)
         }
         CardSnapHelper().attachToRecyclerView(recommend_rv)
@@ -42,7 +42,7 @@ class RecommendFragment : Fragment() {
 
     private fun initRecycleView() {
         recyclerView = find(R.id.recommend_rv)
-        recyclerView.adapter = adapter
+        recyclerView.adapter = recommendAdapter
         recyclerView.setHasFixedSize(true)
 
         recyclerView.addOnScrollListener(object: RecyclerView.OnScrollListener() {
@@ -55,17 +55,12 @@ class RecommendFragment : Fragment() {
 
         layoutManager = recyclerView.layoutManager as CardSliderLayoutManager
     }
-    fun initSwitchers() {
-
-    }
 
     fun onActiveCardChange() {
         val pos: Int = layoutManager.activeCardPosition
         if (pos == RecyclerView.NO_POSITION || pos == currentPosition) {
             return
         }
-
-        //onActiveCardChange(pos)
     }
 
 }
