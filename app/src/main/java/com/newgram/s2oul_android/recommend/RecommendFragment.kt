@@ -14,7 +14,7 @@ import org.jetbrains.anko.support.v4.find
 
 class RecommendFragment : Fragment() {
 
-    private val pics = arrayOf(R.drawable.ic_button, R.drawable.ic_cancel, R.drawable.ic_history)
+    private val pics = arrayOf(R.drawable.ic_button, R.drawable.ic_cancel, R.drawable.ic_history, R.drawable.ic_show, R.drawable.ic_all)
     lateinit var recommendAdapter: RecommendAdapter
 
     private lateinit var layoutManager: CardSliderLayoutManager
@@ -35,7 +35,7 @@ class RecommendFragment : Fragment() {
         initRecycleView()
         recommend_rv.apply {
             adapter = recommendAdapter
-            layoutManager = CardSliderLayoutManager(context)
+            layoutManager = CardSliderLayoutManager(300, 500, 6f)
         }
         CardSnapHelper().attachToRecyclerView(recommend_rv)
     }
