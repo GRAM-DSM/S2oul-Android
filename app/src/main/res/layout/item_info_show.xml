@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                                                   xmlns:app="http://schemas.android.com/apk/res-auto"
+                                                   xmlns:tools="http://schemas.android.com/tools"
+                                                   android:orientation="vertical"
+                                                   android:layout_width="276dp"
+                                                   android:layout_height="150dp">
+
+    <TextView
+            android:text="age"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:id="@+id/info_show_age_tv"
+            android:layout_marginStart="44dp" app:layout_constraintStart_toEndOf="@+id/info_show_showImage_iv"
+            android:layout_marginTop="12dp" app:layout_constraintTop_toBottomOf="@+id/info_show_placeName_tv"
+            android:textSize="13dp"/>
+    <TextView
+            android:text="placeName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:id="@+id/info_show_placeName_tv"
+            android:layout_marginStart="44dp" app:layout_constraintStart_toEndOf="@+id/info_show_showImage_iv"
+            android:layout_marginTop="12dp" app:layout_constraintTop_toBottomOf="@+id/info_show_date_tv"
+            android:textSize="13dp"/>
+    <TextView
+            android:text="date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:id="@+id/info_show_date_tv"
+            app:layout_constraintStart_toEndOf="@+id/info_show_showImage_iv" android:layout_marginStart="44dp"
+            app:layout_constraintTop_toBottomOf="@+id/info_show_showName_tv" android:layout_marginTop="23dp"
+            android:textSize="13dp"/>
+    <TextView
+            android:text="showName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:id="@+id/info_show_showName_tv"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginEnd="8dp" app:layout_constraintTop_toTopOf="parent" android:layout_marginTop="20dp"
+            app:layout_constraintStart_toEndOf="@+id/info_show_showImage_iv" android:layout_marginStart="8dp"
+            android:textSize="16dp"/>
+    <ImageView
+            android:layout_width="102dp"
+            android:layout_height="150dp" tools:srcCompat="@tools:sample/avatars" android:id="@+id/info_show_showImage_iv"
+            app:layout_constraintTop_toTopOf="parent" app:layout_constraintStart_toStartOf="parent"/>
+</androidx.constraintlayout.widget.ConstraintLayout>

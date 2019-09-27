@@ -2,7 +2,12 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
           package="com.newgram.s2oul_android">
 
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERNET">
+    </uses-permission>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION">
+    </uses-permission>
+
+    <meta-data android:name="com.kakao.sdk.AppKey" android:value="699423233b502ac63c9ca8a5783160cb"/>
 
     <application
             android:allowBackup="true"

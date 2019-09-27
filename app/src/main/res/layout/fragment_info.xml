@@ -13,64 +13,40 @@
             app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="12dp"
             android:layout_marginEnd="12dp" app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintBottom_toBottomOf="parent" android:layout_marginTop="40dp"
-            app:layout_constraintTop_toBottomOf="@+id/daily_weekly_button_view" app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintTop_toBottomOf="@+id/info_radio_group" app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintVertical_bias="0.0">
 
     </FrameLayout>
+
     <RadioGroup
-            android:id="@+id/daily_weekly_button_view"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginLeft="8dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="8dp"
-            android:layout_marginRight="8dp"
+            android:id="@+id/info_radio_group"
+            android:layout_width="226dp"
+            android:layout_height="0dp"
             android:gravity="center_horizontal"
-            android:orientation="horizontal"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
-
-
+            app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent"
+            android:orientation="horizontal" app:layout_constraintTop_toTopOf="parent" android:layout_marginTop="24dp">
         <RadioButton
-                android:id="@+id/radio0"
-                android:layout_width="wrap_content"
-                android:gravity="center"
-                android:layout_height="wrap_content"
-                android:background="@drawable/radio_flat_selector"
-                android:button="@android:color/transparent"
-                android:checked="true"
                 android:text="공연"
-                android:textColor="@color/radio_flat_text_selector" />
-
-        <RadioButton
-                android:id="@+id/radio1"
-                android:gravity="center"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@drawable/radio_flat_selector"
+                android:fontFamily="@font/seoulnamsan_b"
                 android:button="@android:color/transparent"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:gravity="center"
+                android:layout_height="32dp"
+                android:background="@drawable/radio_selector"
+                android:id="@+id/info_show_radio"
+                android:checked="true"
+                android:textColor="@color/radio_text_selector"/>
+        <RadioButton
                 android:text="소극장"
-                android:textColor="@color/radio_flat_text_selector" />
-
+                android:gravity="center"
+                android:button="@android:color/transparent"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="32dp"
+                android:fontFamily="@font/seoulnamsan_b"
+                android:background="@drawable/radio_selector"
+                android:id="@+id/info_place_radio"
+                android:textColor="@color/radio_text_selector"/>
     </RadioGroup>
-    //==========================
-    <!--<RadioGroup-->
-            <!--android:layout_width="0dp"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:orientation="horizontal"-->
-            <!--app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="24dp"-->
-            <!--app:layout_constraintTop_toTopOf="parent" android:layout_marginTop="40dp" android:layout_marginEnd="24dp"-->
-            <!--app:layout_constraintEnd_toEndOf="parent" app:layout_constraintHorizontal_bias="0.0"-->
-            <!--android:id="@+id/radioGroup" android:gravity="center">-->
-        <!--<RadioButton-->
-                <!--android:text="공연"-->
-                <!--android:layout_width="wrap_content"-->
-                <!--android:layout_height="wrap_content" android:id="@+id/btn_info_show" android:layout_weight="1"/>-->
-        <!--<RadioButton-->
-                <!--android:text="소극장"-->
-                <!--android:layout_width="wrap_content"-->
-                <!--android:layout_height="wrap_content" android:id="@+id/btn_info_place" android:layout_weight="1"/>-->
-    <!--</RadioGroup>-->
 </androidx.constraintlayout.widget.ConstraintLayout>
