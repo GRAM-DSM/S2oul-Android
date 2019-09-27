@@ -15,6 +15,7 @@ class SearchDetailActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_search_detail)
 
+        search_et.setText(intent.getStringExtra("result"))
         Log.d("searchresult", intent.getStringExtra("result"))
         supportFragmentManager.beginTransaction().run {
             replace(

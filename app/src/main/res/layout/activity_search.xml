@@ -50,7 +50,8 @@
             app:layout_constraintStart_toStartOf="parent"
             android:layout_marginStart="32dp"
             android:id="@+id/searchHistory_rv"
-            android:layout_marginTop="8dp">
+            android:layout_marginTop="8dp"
+            tools:listitem="@layout/item_search_history">
 
     </androidx.recyclerview.widget.RecyclerView>
 
