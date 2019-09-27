@@ -2,21 +2,30 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
           package="com.newgram.s2oul_android">
 
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERNET">
+    </uses-permission>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION">
+    </uses-permission>
+
+    <meta-data android:name="com.kakao.sdk.AppKey" android:value="699423233b502ac63c9ca8a5783160cb"/>
 
     <application
             android:allowBackup="true"
-            android:icon="@mipmap/ic_launcher"
+            android:icon="@mipmap/ic_logo"
             android:label="@string/app_name"
             android:networkSecurityConfig="@xml/network_security_config"
-            android:roundIcon="@mipmap/ic_launcher_round"
+            android:roundIcon="@mipmap/ic_logo_round"
             android:supportsRtl="true"
             android:theme="@style/AppTheme">
-        <activity android:name=".PlaceDetailActivity">
+        <activity android:name=".searchResult.SearchFilterActivity">
         </activity>
-        <activity android:name=".ShowDetailActivity">
+        <activity android:name=".searchResult.SearchDetailActivity">
         </activity>
-        <activity android:name=".SearchActivity">
+        <activity android:name=".placeDetail.PlaceDetailActivity">
+        </activity>
+        <activity android:name=".showDetail.ShowDetailActivity">
+        </activity>
+        <activity android:name=".search.SearchActivity">
         </activity>
         <activity android:name=".MainActivity">
             <intent-filter>
