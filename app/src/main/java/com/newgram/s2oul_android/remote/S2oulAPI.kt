@@ -1,7 +1,7 @@
 package com.newgram.s2oul_android.remote
 
-import com.newgram.s2oul_android.entities.Show
-import com.newgram.s2oul_android.entities.Theater
+import com.newgram.s2oul_android.entity.Show
+import com.newgram.s2oul_android.entity.Theater
 import retrofit2.Call
 import retrofit2.http.GET
 import retrofit2.http.Path

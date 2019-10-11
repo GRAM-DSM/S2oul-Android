@@ -1,4 +1,4 @@
-package com.newgram.s2oul_android.entities
+package com.newgram.s2oul_android.entity
 
 data class PlaceDetail(
     var name: String,
