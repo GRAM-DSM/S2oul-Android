@@ -1,4 +1,4 @@
-package com.newgram.s2oul_android
+package com.newgram.s2oul_android.entity
 
 val dummy: ArrayList<String> =
         arrayListOf(
