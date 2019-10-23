@@ -1,9 +1,15 @@
 package com.newgram.s2oul_android.entity
-
 data class ShowDetail(
-    var name: String,
-    var age: String,
-    var price: String,
-    var place: PlaceDetail,
-    var story: List<String>
-) {}
+    var showImage: String,
+    var summaryImage: String,
+    var theaterImage: String,
+    var showName: String,
+    var period: String,
+    var cost: String,
+    var runningTime: String,
+    var link: String,
+    var theaterName: String,
+    var location: String,
+    var phoneNumber: String,
+    var theaterId: String
+)

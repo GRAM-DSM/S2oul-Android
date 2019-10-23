@@ -8,7 +8,6 @@ import android.widget.ImageView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.newgram.s2oul_android.R
-import com.newgram.s2oul_android.entity.Show
 import kotlinx.android.synthetic.main.item_placedetail_shows.view.*
 
 class PlaceDetailAdapater(val context: Context, val items: List<Show>): RecyclerView.Adapter<PlaceDetailAdapater.PlaceDetailViewHolder>() {
