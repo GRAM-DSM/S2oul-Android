@@ -6,28 +6,18 @@ import retrofit2.http.GET
 import retrofit2.http.Path
 
 interface S2oulAPI {
+    //DetailInfo
     @GET("/detailInfo/show/{showId}")
     fun getShow(
         @Path("showId") showId: String
-    ): Call<ShowDetailInfo>
+    ): Call<ShowDetail>
 
     @GET("/detailInfo/theater/{theaterId}")
     fun getTheater(
         @Path("theaterId") theaterId: String
-    ): Call<TheaterDetailInfo>
+    ): Call<TheaterDetail>
 
-    @GET("/show/showList/?serachType={genre}&keyword={showName}")
-    fun searchShow(
-        @Path("genre") genre: String,
-        @Path("showName") showName: String
-    ): Call<Array<Show>>
-
-    @GET("/theater/theaterList/?serachType={sort}&keyword={theaterName}")
-    fun searchTheater(
-        @Path("sort") genre: String,
-        @Path("theaterName") theaterName: String
-    ): Call<Array<TheaterInfo>>
-
+    //Info
     @GET("/Info/showEndDate/{genre}")
     fun showEndData(
         @Path("genre") genre: String
@@ -43,8 +33,22 @@ interface S2oulAPI {
         @Path("genre") genre: String
     ): Call<Array<TheaterInfo>>
 
+    //Map
     @GET("/map/{latAndLng}")
     fun getMap(
         @Path("latAndLng") latAndLng: String
-    ): Call<Array<TheaterInfo>>
+    ): Call<Array<TheaterMap>>
+
+    //Search
+    @GET("/show/showList/?searchType={genre}&keyword={showName}")
+    fun searchShow(
+        @Path("genre") genre: String,
+        @Path("showName") showName: String
+    ): Call<Array<Show>>
+
+    @GET("/theater/theaterList/?searchType={sort}&keyword={theaterName}")
+    fun searchTheater(
+        @Path("sort") genre: String,
+        @Path("theaterName") theaterName: String
+    ): Call<Array<TheaterResult>>
 }

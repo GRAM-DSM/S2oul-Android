@@ -1,5 +1,5 @@
 package com.newgram.s2oul_android.entity
-data class ShowDetailInfo(
+data class ShowDetail(
     var showImage: String,
     var summaryImage: String,
     var theaterImage: String,

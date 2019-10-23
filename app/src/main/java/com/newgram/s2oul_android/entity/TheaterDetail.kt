@@ -1,6 +1,6 @@
 package com.newgram.s2oul_android.entity
 
-data class TheaterDetailInfo(
+data class TheaterDetail(
     var image: String,
     var name: String,
     var phoneNumber: String,

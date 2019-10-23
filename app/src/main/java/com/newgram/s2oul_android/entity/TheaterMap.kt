@@ -1,9 +1,11 @@
 package com.newgram.s2oul_android.entity
 
-data class TheaterInfo(
+data class TheaterMap(
     var theaterImage: String,
     var theaterName: String,
-    var phoneNumber: String,
+    var latitude: String,
+    var longitude: String,
     var location: String,
+    var phoneNumber: String,
     var theaterId: String
 )
