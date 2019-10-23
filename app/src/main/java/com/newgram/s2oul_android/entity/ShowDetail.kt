@@ -1,15 +1,11 @@
-package com.newgram.s2oul_android.entities
-
-data class Show(
+package com.newgram.s2oul_android.entity
+data class ShowDetail(
     var showImage: String,
     var summaryImage: String,
     var theaterImage: String,
     var showName: String,
     var period: String,
-    var showId: String,
     var cost: String,
-    var age: String,
-    var name: String,
     var runningTime: String,
     var link: String,
     var theaterName: String,
