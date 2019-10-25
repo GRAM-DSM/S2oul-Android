@@ -1,4 +1,4 @@
-package com.newgram.s2oul_android.showDetail
+package com.newgram.s2oul_android.detail.showDetail
 
 import android.content.Intent
 import android.net.Uri

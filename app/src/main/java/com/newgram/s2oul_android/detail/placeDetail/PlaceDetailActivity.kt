@@ -1,4 +1,4 @@
-package com.newgram.s2oul_android.placeDetail
+package com.newgram.s2oul_android.detail.placeDetail
 
 import android.os.Bundle
 import android.view.View
@@ -6,7 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.newgram.s2oul_android.R
-import com.newgram.s2oul_android.showDetail.ShowDetailActivity
+import com.newgram.s2oul_android.detail.showDetail.ShowDetailActivity
 import kotlinx.android.synthetic.main.activity_place_detail.*
 import org.jetbrains.anko.startActivity
 

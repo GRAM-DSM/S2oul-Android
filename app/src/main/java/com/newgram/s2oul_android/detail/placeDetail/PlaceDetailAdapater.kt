@@ -1,4 +1,4 @@
-package com.newgram.s2oul_android.placeDetail
+package com.newgram.s2oul_android.detail.placeDetail
 
 import android.content.Context
 import android.view.LayoutInflater

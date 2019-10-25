@@ -17,13 +17,13 @@
             android:roundIcon="@mipmap/ic_logo_round"
             android:supportsRtl="true"
             android:theme="@style/AppTheme">
-        <activity android:name=".searchResult.SearchFilterActivity">
+        <activity android:name="com.newgram.s2oul_android.searchResult.SearchFilterActivity">
         </activity>
-        <activity android:name=".searchResult.SearchDetailActivity">
+        <activity android:name="com.newgram.s2oul_android.searchResult.SearchDetailActivity">
         </activity>
-        <activity android:name=".placeDetail.PlaceDetailActivity">
+        <activity android:name="com.newgram.s2oul_android.detail.placeDetail.PlaceDetailActivity">
         </activity>
-        <activity android:name=".showDetail.ShowDetailActivity">
+        <activity android:name="com.newgram.s2oul_android.detail.showDetail.ShowDetailActivity">
         </activity>
         <activity android:name=".search.SearchActivity">
         </activity>
