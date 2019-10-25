@@ -9,7 +9,6 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.newgram.s2oul_android.R
-import com.newgram.s2oul_android.entity.dummy
 import com.newgram.s2oul_android.searchResult.SearchDetailActivity
 import io.reactivex.Single
 import kotlinx.android.synthetic.main.activity_search.*
@@ -20,11 +19,10 @@ class SearchActivity : AppCompatActivity() {
 
     val searchHistoryAdapter by lazy {
         SearchHistoryAdapter(
-            this,
-            dummy
+            this, list
         )
     }
-    var list = dummy
+    var list: List<String> = listOf<String>("hello", "list")
     val rxword: Single<String>? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
