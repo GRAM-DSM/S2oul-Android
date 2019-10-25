@@ -1,16 +1,18 @@
-package com.newgram.s2oul_android
+package com.newgram.s2oul_android.placeInfo
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import com.newgram.s2oul_android.R
 
 
 class PlaceInfoFragment : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
     }
 
     override fun onCreateView(
