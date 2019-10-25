@@ -1,4 +1,4 @@
-package com.newgram.s2oul_android.remote
+package com.newgram.s2oul_android.data.remote
 
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory

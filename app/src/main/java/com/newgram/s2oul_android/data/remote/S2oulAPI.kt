@@ -1,6 +1,7 @@
-package com.newgram.s2oul_android.remote
+package com.newgram.s2oul_android.data.remote
 
 import com.newgram.s2oul_android.entity.*
+import io.reactivex.Flowable
 import retrofit2.Call
 import retrofit2.http.GET
 import retrofit2.http.Path
@@ -10,12 +11,12 @@ interface S2oulAPI {
     @GET("/detailInfo/show/{showId}")
     fun getShow(
         @Path("showId") showId: String
-    ): Call<ShowDetail>
+    ): Flowable<ShowDetail>
 
     @GET("/detailInfo/theater/{theaterId}")
     fun getTheater(
         @Path("theaterId") theaterId: String
-    ): Call<TheaterDetail>
+    ): Flowable<TheaterDetail>
 
     //Info
     @GET("/Info/showEndDate/{genre}")
@@ -44,7 +45,7 @@ interface S2oulAPI {
     fun searchShow(
         @Path("genre") genre: String,
         @Path("showName") showName: String
-    ): Call<Array<Show>>
+    ): Call<Array<ShowResult>>
 
     @GET("/theater/theaterList/?searchType={sort}&keyword={theaterName}")
     fun searchTheater(
