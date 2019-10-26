@@ -22,10 +22,7 @@ class PlaceDetailActivity : AppCompatActivity(), PlaceDetailContract.View {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_place_detail)
 
-        placeDetail_name_tv.text = intent.getStringExtra("name")
-        placeDetail_number_tv.text
-        placeDetail_address_tv.text
-        placeDetail_sitcount_tv.text
+        presenter.loadPlace(intent.getStringExtra("theaterId"))
 
         adapter.itemClick = object: PlaceDetailAdapater.ItemClick {
             override fun onClick(v: View, position: Int) {
@@ -37,6 +34,10 @@ class PlaceDetailActivity : AppCompatActivity(), PlaceDetailContract.View {
     }
 
     override fun showPlaceDetail() {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        placeDetail_name_tv.text = intent.getStringExtra("name")
+        placeDetail_number_tv.text
+        placeDetail_address_tv.text
+        placeDetail_sitcount_tv.text
+
     }
 }

@@ -10,6 +10,6 @@ interface PlaceDetailContract {
     }
 
     interface Presenter: BasePresenter {
-        fun loadPlace()
+        fun loadPlace(theaterId: String)
     }
 }
