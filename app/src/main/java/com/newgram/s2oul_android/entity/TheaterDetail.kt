@@ -6,5 +6,5 @@ data class TheaterDetail(
     var phoneNumber: String,
     var location: String,
     var seatNumber: String,
-    var shows: Array<Show>
+    var shows: ArrayList<Show>
 )

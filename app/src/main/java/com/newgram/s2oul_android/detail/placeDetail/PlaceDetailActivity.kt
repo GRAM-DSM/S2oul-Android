@@ -7,7 +7,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.newgram.s2oul_android.R
 import com.newgram.s2oul_android.detail.showDetail.ShowDetailActivity
-import com.newgram.s2oul_android.entity.ShowDetail
+import com.newgram.s2oul_android.entity.Show
 import kotlinx.android.synthetic.main.activity_place_detail.*
 import org.jetbrains.anko.startActivity
 
@@ -15,8 +15,8 @@ class PlaceDetailActivity : AppCompatActivity(), PlaceDetailContract.View {
 
     override lateinit var presenter: PlaceDetailContract.Presenter
 
-    var items = ArrayList<ShowDetail>()
-    val adapter = PlaceDetailAdapater(this, items)
+    var items = ArrayList<Show>()
+    val adapter = PlaceDetailAdapater(this)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -29,8 +29,10 @@ class PlaceDetailActivity : AppCompatActivity(), PlaceDetailContract.View {
                 startActivity<ShowDetailActivity>("name" to "")
             }
         }
+
         placeDetail_rv.adapter = adapter
         placeDetail_rv.layoutManager = LinearLayoutManager(this, RecyclerView.HORIZONTAL, false)
+        adapter.notifyDataSetChanged()
     }
 
     override fun showPlaceDetail() {
@@ -38,6 +40,7 @@ class PlaceDetailActivity : AppCompatActivity(), PlaceDetailContract.View {
         placeDetail_number_tv.text
         placeDetail_address_tv.text
         placeDetail_sitcount_tv.text
-
     }
+
+    override fun addData(items: ArrayList<Show>) = adapter.addItems(items)
 }
