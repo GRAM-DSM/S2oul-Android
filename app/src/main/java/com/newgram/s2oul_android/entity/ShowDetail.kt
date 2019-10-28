@@ -5,6 +5,7 @@ data class ShowDetail(
     var theaterImage: String,
     var showName: String,
     var period: String,
+    var age: String,
     var cost: String,
     var runningTime: String,
     var link: String,
