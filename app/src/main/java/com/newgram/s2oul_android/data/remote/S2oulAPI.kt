@@ -47,7 +47,7 @@ interface S2oulAPI {
         @Path("showName") showName: String
     ): Call<Array<ShowResult>>
 
-    @GET("/theater/theaterList/?searchType={sort}&keyword={theaterName}")
+    @GET("/theater/theaterList?keyword={theaterName}")
     fun searchTheater(
         @Path("sort") genre: String,
         @Path("theaterName") theaterName: String
