@@ -22,7 +22,7 @@ class PlaceDetailPresenter(
 
     }
     override fun loadPlace(theaterId: String) {
-        var list = ArrayList<Show>()
+        var list: ArrayList<Show>
         repository.loadPlace(theaterId).subscribe( {
             list = it.shows
             image = it.image

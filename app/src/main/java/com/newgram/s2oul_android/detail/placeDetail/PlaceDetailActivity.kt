@@ -29,6 +29,7 @@ class PlaceDetailActivity : AppCompatActivity(), PlaceDetailContract.View {
                 startActivity<ShowDetailActivity>("name" to "")
             }
         }
+        adapter.addItems(items)
 
         placeDetail_rv.adapter = adapter
         placeDetail_rv.layoutManager = LinearLayoutManager(this, RecyclerView.HORIZONTAL, false)
@@ -43,4 +44,8 @@ class PlaceDetailActivity : AppCompatActivity(), PlaceDetailContract.View {
     }
 
     override fun addData(items: ArrayList<Show>) = adapter.addItems(items)
+
+    override fun goShowDetail(showId: String) {
+        startActivity<ShowDetailActivity>("showId" to "showId")
+    }
 }

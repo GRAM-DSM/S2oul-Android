@@ -9,6 +9,7 @@ interface PlaceDetailContract {
     interface View: BaseView<Presenter> {
         fun showPlaceDetail()
         fun addData(items: ArrayList<Show>)
+        fun goShowDetail(showId: String)
     }
 
     interface Presenter: BasePresenter {
