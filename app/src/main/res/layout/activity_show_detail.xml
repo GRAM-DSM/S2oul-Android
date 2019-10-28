@@ -94,7 +94,7 @@
                 android:textSize="14sp"/>
         <TextView
                 android:text="만 12세 이상"
-                android:id="@+id/showDetail_price_tv"
+                android:id="@+id/showDetail_age_tv"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:fontFamily="@font/seoulnamsan_eb"
