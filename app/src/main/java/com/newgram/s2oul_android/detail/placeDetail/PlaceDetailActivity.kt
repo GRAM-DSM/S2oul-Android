@@ -22,11 +22,13 @@ class PlaceDetailActivity : AppCompatActivity(), PlaceDetailContract.View {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_place_detail)
 
-        presenter.loadPlace(intent.getStringExtra("theaterId"))
+        PlaceDetailPresenter(this@PlaceDetailActivity)
+
+        //presenter.loadPlace(intent.getStringExtra("theaterId"))
 
         adapter.itemClick = object: PlaceDetailAdapater.ItemClick {
             override fun onClick(v: View, position: Int) {
-                startActivity<ShowDetailActivity>("name" to "")
+                startActivity<ShowDetailActivity>("name" to position)
             }
         }
         adapter.addItems(items)

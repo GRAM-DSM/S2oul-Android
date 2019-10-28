@@ -4,9 +4,10 @@ import com.newgram.s2oul_android.data.repository.PlaceDetailRepository
 import com.newgram.s2oul_android.entity.Show
 
 class PlaceDetailPresenter(
-    private val repository: PlaceDetailRepository,
     private val view: PlaceDetailContract.View
 ) : PlaceDetailContract.Presenter {
+
+    private val repository =  PlaceDetailRepository
 
     init {
         view.presenter = this

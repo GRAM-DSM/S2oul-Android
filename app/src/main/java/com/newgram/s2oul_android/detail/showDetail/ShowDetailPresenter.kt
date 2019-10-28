@@ -3,9 +3,10 @@ package com.newgram.s2oul_android.detail.showDetail
 import com.newgram.s2oul_android.data.repository.ShowDetailRepository
 
 class ShowDetailPresenter(
-    private val repository: ShowDetailRepository,
     private val view: ShowDetailContract.View
 ): ShowDetailContract.Presenter {
+
+    private val repository = ShowDetailRepository
 
     init {
         view.presenter = this

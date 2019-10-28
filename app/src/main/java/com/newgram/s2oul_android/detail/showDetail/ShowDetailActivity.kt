@@ -20,6 +20,9 @@ class ShowDetailActivity : AppCompatActivity(), ShowDetailContract.View {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_show_detail)
 
+        ShowDetailPresenter(this@ShowDetailActivity)
+        showShowDetail()
+
         intent.getStringExtra("name")
         showDetail_place_layout.onClick {
             goPlaceDetail("theaterId")
@@ -33,7 +36,7 @@ class ShowDetailActivity : AppCompatActivity(), ShowDetailContract.View {
     }
 
     override fun showShowDetail() {
-        showDetail_name_tv.text
+        showDetail_name_tv.text = intent.getStringExtra("name")
         showDetail_date_tv.text
         showDetail_age_tv.text
         showDetail_price_tv.text

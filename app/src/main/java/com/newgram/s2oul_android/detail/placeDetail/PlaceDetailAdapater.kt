@@ -16,7 +16,7 @@ class PlaceDetailAdapater(val context: Context): RecyclerView.Adapter<PlaceDetai
         fun onClick(v: View, position: Int)
     }
 
-    private var items = ArrayList<Show>()
+    private var items = arrayListOf(Show("", "name", "dd"), Show("", "hello", "aa"))
 
     var itemClick: ItemClick? = null
 
