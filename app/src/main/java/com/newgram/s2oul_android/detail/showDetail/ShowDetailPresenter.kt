@@ -7,6 +7,7 @@ class ShowDetailPresenter(
 ): ShowDetailContract.Presenter {
 
     private val repository = ShowDetailRepository
+    public var link: String? = null
 
     init {
         view.presenter = this
@@ -28,7 +29,7 @@ class ShowDetailPresenter(
             it.theaterId
             it.theaterImage
             it.theaterName
-            it.link
+            link = it.link
             it.phoneNumber
             it.theaterId
             view.showShowDetail()

@@ -8,6 +8,7 @@ interface ShowDetailContract {
         fun showShowDetail()
         fun showThisTheater()
         fun goPlaceDetail(theaterId: String)
+        fun goTicketLink(link: String)
     }
 
 
