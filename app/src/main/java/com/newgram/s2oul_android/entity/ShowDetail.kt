@@ -1,5 +1,6 @@
 package com.newgram.s2oul_android.entity
 data class ShowDetail(
+    var showId: String,
     var showImage: String,
     var summaryImage: String,
     var theaterImage: String,

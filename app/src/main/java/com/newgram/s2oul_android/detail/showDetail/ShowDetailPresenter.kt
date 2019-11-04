@@ -1,5 +1,6 @@
 package com.newgram.s2oul_android.detail.showDetail
 
+import android.util.Log
 import com.newgram.s2oul_android.data.repository.ShowDetailRepository
 
 class ShowDetailPresenter(
@@ -7,7 +8,6 @@ class ShowDetailPresenter(
 ): ShowDetailContract.Presenter {
 
     private val repository = ShowDetailRepository
-    public var link: String? = null
 
     init {
         view.presenter = this
@@ -19,23 +19,9 @@ class ShowDetailPresenter(
 
     override fun loadShow(showId: String) {
         repository.loadShow(showId).subscribe( {
-            it.showName
-            it.showImage
-            it.period
-            it.cost
-            it.location
-            it.runningTime
-            it.summaryImage
-            it.theaterId
-            it.theaterImage
-            it.theaterName
-            link = it.link
-            it.phoneNumber
-            it.theaterId
-            view.showShowDetail()
-            view.showThisTheater()
+            view.showShowDetail(it)
         }, {
-
+            Log.d("loadShow", "" + it.localizedMessage)
         })
     }
 }
