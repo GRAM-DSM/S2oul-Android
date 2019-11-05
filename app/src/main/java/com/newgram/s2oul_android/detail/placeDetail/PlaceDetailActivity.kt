@@ -31,7 +31,7 @@ class PlaceDetailActivity : AppCompatActivity(), PlaceDetailContract.View {
 
         adapter.itemClick = object: PlaceDetailAdapater.ItemClick {
             override fun onClick(v: View, position: Int) {
-                startActivity<ShowDetailActivity>("name" to position)
+                startActivity<ShowDetailActivity>("showId" to position)
             }
         }
         adapter.addItems(items)

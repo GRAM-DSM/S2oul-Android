@@ -25,8 +25,6 @@ class ShowDetailActivity : AppCompatActivity(), ShowDetailContract.View {
 
         ShowDetailPresenter(this@ShowDetailActivity)
         presenter.loadShow(intent.getStringExtra("showId"))
-
-        intent.getStringExtra("name")
         showDetail_place_layout.onClick {
             goPlaceDetail(theaterId)
         }
@@ -57,7 +55,7 @@ class ShowDetailActivity : AppCompatActivity(), ShowDetailContract.View {
     }
 
     override fun goTicketLink(link: String) {
-        val intent = Intent(Intent.ACTION_VIEW, Uri.parse("http://${uri}"))
+        val intent = Intent(Intent.ACTION_VIEW, Uri.parse(uri))
         startActivity(intent)
     }
 }
