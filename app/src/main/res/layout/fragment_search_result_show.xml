@@ -3,12 +3,13 @@
              xmlns:tools="http://schemas.android.com/tools"
              android:layout_width="match_parent"
              android:layout_height="match_parent"
-             tools:context=".searchResult.SearchDetailPlaceFragment">
-
+             tools:context=".searchResult.SearchResultShowFragment">
     <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/searchDetail_place_rv"
+            android:id="@+id/searchDetail_show_rv"
             android:layout_width="match_parent"
-            tools:listitem="@layout/item_search_place_result"
-            android:layout_height="match_parent"></androidx.recyclerview.widget.RecyclerView>
+            android:layout_height="match_parent"
+            tools:listitem="@layout/item_search_show_result">
+
+    </androidx.recyclerview.widget.RecyclerView>
 
 </FrameLayout>

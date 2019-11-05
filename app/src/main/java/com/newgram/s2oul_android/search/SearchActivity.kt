@@ -9,7 +9,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.newgram.s2oul_android.R
-import com.newgram.s2oul_android.searchResult.SearchDetailActivity
+import com.newgram.s2oul_android.searchResult.SearchResultActivity
 import io.reactivex.Single
 import kotlinx.android.synthetic.main.activity_search.*
 import org.jetbrains.anko.sdk27.coroutines.onClick
@@ -41,7 +41,7 @@ class SearchActivity : AppCompatActivity() {
                 when(actionId) {
                     EditorInfo.IME_NULL -> {}
                     EditorInfo.IME_ACTION_SEARCH -> {
-                        startActivity<SearchDetailActivity>("result" to search_et.text.toString())
+                        startActivity<SearchResultActivity>("result" to search_et.text.toString())
                         return false
                     }
                 }
