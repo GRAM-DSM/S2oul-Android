@@ -5,14 +5,13 @@ import android.util.Log
 import android.widget.RadioGroup
 import androidx.appcompat.app.AppCompatActivity
 import com.newgram.s2oul_android.R
-import com.newgram.s2oul_android.entity.ShowResult
+import com.newgram.s2oul_android.searchResult.showSearch.ShowSearchFragment
+import com.newgram.s2oul_android.searchResult.theaterSearch.TheaterSearchFragment
 import kotlinx.android.synthetic.main.activity_result_detail.*
 import org.jetbrains.anko.sdk27.coroutines.onClick
 import org.jetbrains.anko.startActivity
 
-class SearchResultActivity : AppCompatActivity(), SearchResultContract.View {
-
-    override lateinit var presenter: SearchResultContract.Presenter
+class SearchResultActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -23,7 +22,7 @@ class SearchResultActivity : AppCompatActivity(), SearchResultContract.View {
         supportFragmentManager.beginTransaction().run {
             replace(
                 R.id.search_detail_frame,
-                SearchResultShowFragment()
+                ShowSearchFragment()
             )
                 .commit()
         }
@@ -34,17 +33,13 @@ class SearchResultActivity : AppCompatActivity(), SearchResultContract.View {
         }
     }
 
-    override fun showResult(items: Array<ShowResult>) {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
-    }
-
     private val radioCheckedChangeListener = RadioGroup.OnCheckedChangeListener { item, i ->
         val transaction = supportFragmentManager.beginTransaction()
         when(item.checkedRadioButtonId) {
             R.id.search_show_radio -> {
                 transaction.replace(
                     R.id.search_detail_frame,
-                    SearchResultShowFragment()
+                    ShowSearchFragment()
                 )
                 transaction.commit()
                 return@OnCheckedChangeListener
@@ -52,7 +47,7 @@ class SearchResultActivity : AppCompatActivity(), SearchResultContract.View {
             R.id.search_place_radio -> {
                 transaction.replace(
                     R.id.search_detail_frame,
-                    SearchResultPlaceFragment()
+                    TheaterSearchFragment()
                 )
                 transaction.commit()
                 return@OnCheckedChangeListener
