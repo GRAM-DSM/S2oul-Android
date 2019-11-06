@@ -8,7 +8,7 @@ import io.reactivex.Flowable
 object ShowSearchRepository: ShowSearchSource {
     private val dataSource = ShowSearchSourceImpl
 
-    override fun searchShow(genre: String, sort: String, word: String): Flowable<Array<ShowResult>> =
+    override fun searchShow(genre: String, sort: String, word: String): Flowable<ArrayList<ShowResult>> =
         dataSource.searchShow(genre, sort, word)
 
 }

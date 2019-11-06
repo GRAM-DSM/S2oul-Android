@@ -47,10 +47,10 @@ interface S2oulAPI {
         @Query("searchType") genre: String,
         @Query("searchType") sort: String,
         @Query("keyword") showName: String
-    ): Flowable<Array<ShowResult>>
+    ): Flowable<ArrayList<ShowResult>>
 
     @GET("/theater/theaterList")
     fun searchTheater(
         @Query("keyword") theaterName: String
-    ): Flowable<Array<TheaterResult>>
+    ): Flowable<ArrayList<TheaterResult>>
 }
