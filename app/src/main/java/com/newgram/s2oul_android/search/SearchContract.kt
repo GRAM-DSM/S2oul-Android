@@ -5,11 +5,12 @@ import com.newgram.s2oul_android.BaseView
 
 interface SearchContract {
     interface View: BaseView<Presenter> {
-        fun showRecord();
+        fun showRecord(words: ArrayList<String>)
         fun goSearchResult()
     }
 
     interface Presenter: BasePresenter {
+        fun saveRecord(word: String)
         fun loadRecord()
     }
 }

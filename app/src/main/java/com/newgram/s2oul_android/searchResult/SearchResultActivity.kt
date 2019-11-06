@@ -31,6 +31,10 @@ class SearchResultActivity : AppCompatActivity() {
         search_filter_iv.onClick{
             startActivity<SearchFilterActivity>()
         }
+
+        search_cancel_iv.onClick{
+            finish()
+        }
     }
 
     private val radioCheckedChangeListener = RadioGroup.OnCheckedChangeListener { item, i ->

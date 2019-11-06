@@ -8,18 +8,19 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.newgram.s2oul_android.R
 
-class SearchHistoryAdapter(var context: Context, val items: List<String>): RecyclerView.Adapter<SearchHistoryAdapter.SearchHistoryViewHolder>() {
+class SearchHistoryAdapter(var context: Context): RecyclerView.Adapter<SearchHistoryAdapter.SearchHistoryViewHolder>() {
 
-    var list = items
+    var list = ArrayList<String>()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): SearchHistoryViewHolder {
         return SearchHistoryViewHolder(LayoutInflater.from(context).inflate(R.layout.item_search_history, parent, false))
     }
 
-    override fun getItemCount() = items.size
+    override fun getItemCount() = 0
 
     override fun onBindViewHolder(holder: SearchHistoryViewHolder, position: Int) {
         holder.bind(list[position])
+        notifyDataSetChanged()
     }
 
 //    fun filter(text: String) {

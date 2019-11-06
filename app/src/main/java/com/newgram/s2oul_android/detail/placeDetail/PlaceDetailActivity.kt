@@ -25,7 +25,7 @@ class PlaceDetailActivity : AppCompatActivity(), PlaceDetailContract.View {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_place_detail)
 
-        PlaceDetailPresenter(this@PlaceDetailActivity)
+        presenter = PlaceDetailPresenter(this@PlaceDetailActivity)
 
         presenter.loadPlace(intent.getStringExtra("theaterId"))
 
