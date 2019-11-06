@@ -5,6 +5,7 @@ import android.util.Log
 import android.widget.RadioGroup
 import androidx.appcompat.app.AppCompatActivity
 import com.newgram.s2oul_android.R
+import com.newgram.s2oul_android.searchFilter.SearchFilterActivity
 import com.newgram.s2oul_android.searchResult.showSearch.ShowSearchFragment
 import com.newgram.s2oul_android.searchResult.theaterSearch.TheaterSearchFragment
 import kotlinx.android.synthetic.main.activity_result_detail.*
@@ -26,7 +27,7 @@ class SearchResultActivity : AppCompatActivity() {
             )
                 .commit()
         }
-        search_radio_group.setOnCheckedChangeListener(radioCheckedChangeListener)
+        search_filter_radio_group.setOnCheckedChangeListener(radioCheckedChangeListener)
 
         search_filter_iv.onClick{
             startActivity<SearchFilterActivity>()

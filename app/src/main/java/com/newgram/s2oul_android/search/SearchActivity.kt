@@ -10,6 +10,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.newgram.s2oul_android.R
+import com.newgram.s2oul_android.adapter.SearchHistoryAdapter
 import com.newgram.s2oul_android.searchResult.SearchResultActivity
 import kotlinx.android.synthetic.main.activity_search.*
 import org.jetbrains.anko.sdk27.coroutines.onClick

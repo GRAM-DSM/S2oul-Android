@@ -4,5 +4,5 @@ import com.newgram.s2oul_android.entity.ShowResult
 import io.reactivex.Flowable
 
 interface ShowSearchSource{
-    fun searchShow(genre: String, word: String): Flowable<Array<ShowResult>>
+    fun searchShow(genre: String,sort: String, word: String): Flowable<Array<ShowResult>>
 }

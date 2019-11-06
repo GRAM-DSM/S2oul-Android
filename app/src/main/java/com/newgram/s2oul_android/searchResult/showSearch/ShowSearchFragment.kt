@@ -19,7 +19,14 @@ class ShowSearchFragment : Fragment(), ShowSearchContract.View {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_show_search, container, false)
+    }
+
+    override fun showResult() {
+        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+    }
+
+    override fun goDetail(id: String) {
+        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
     }
 }

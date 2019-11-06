@@ -1,4 +1,4 @@
-package com.newgram.s2oul_android.search
+package com.newgram.s2oul_android.adapter
 
 import android.content.Context
 import android.view.LayoutInflater

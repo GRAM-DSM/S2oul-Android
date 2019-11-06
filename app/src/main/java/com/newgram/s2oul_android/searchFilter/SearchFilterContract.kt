@@ -1,15 +1,14 @@
-package com.newgram.s2oul_android.searchResult.showSearch
+package com.newgram.s2oul_android.searchFilter
 
 import com.newgram.s2oul_android.BasePresenter
 import com.newgram.s2oul_android.BaseView
 
-interface ShowSearchContract {
+interface SearchFilterContract {
     interface View: BaseView<Presenter> {
-        fun showResult()
-        fun goDetail(id: String)
+
     }
 
     interface Presenter: BasePresenter {
-        fun loadResult(word: String)
+
     }
 }

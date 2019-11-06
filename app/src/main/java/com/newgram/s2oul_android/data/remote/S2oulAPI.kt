@@ -42,10 +42,11 @@ interface S2oulAPI {
     ): Call<Array<TheaterMap>>
 
     //Search
-    @GET("/show/showList/?searchType={genre}&keyword={showName}")
+    @GET("/show/showList/")
     fun searchShow(
-        @Path("genre") genre: String,
-        @Path("showName") showName: String
+        @Query("searchType") genre: String,
+        @Query("searchType") sort: String,
+        @Query("keyword") showName: String
     ): Flowable<Array<ShowResult>>
 
     @GET("/theater/theaterList")

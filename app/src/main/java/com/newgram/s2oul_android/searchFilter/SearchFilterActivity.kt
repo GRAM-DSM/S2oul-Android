@@ -1,4 +1,4 @@
-package com.newgram.s2oul_android.searchResult
+package com.newgram.s2oul_android.searchFilter
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity

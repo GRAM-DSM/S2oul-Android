@@ -23,21 +23,6 @@ class HistoryPref (context: Context) {
         Log.d("history", "load")
         return dataList
 
-//        return pref.getString("HISTORY", null)
-//        return pref.all
-//        var array =  ArrayList<String>()
-//        if (word != null) {
-//            try {
-//                var a = JSONArray(word)
-//                for (i in 0..a.length()) {
-//                    val url = a.optString(i)
-//                    array.add(url)
-//                }
-//            } catch (e: JSONException) {
-//                e.printStackTrace()
-//            }
-//        }
-//        return array
     }
 
     fun deleteData(word: String) {
