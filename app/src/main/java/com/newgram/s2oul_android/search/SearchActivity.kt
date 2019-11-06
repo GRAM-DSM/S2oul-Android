@@ -25,15 +25,14 @@ class SearchActivity : AppCompatActivity(), SearchContract.View {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_search)
 
-        presenter = SearchPresenter(this@SearchActivity, applicationContext)
-
-        presenter.loadRecord()
-
         val layoutManager = LinearLayoutManager(this, RecyclerView.VERTICAL, false)
-
         searchHistory_rv.adapter = searchHistoryAdapter
         searchHistory_rv.layoutManager = layoutManager
         searchHistory_rv.setHasFixedSize(true)
+
+        presenter = SearchPresenter(this@SearchActivity, applicationContext)
+
+        presenter.loadRecord()
 
         search_cancel_iv.onClick { finish() }
         search_et.setOnEditorActionListener(object: TextView.OnEditorActionListener{

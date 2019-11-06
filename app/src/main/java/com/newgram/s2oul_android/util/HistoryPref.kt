@@ -17,8 +17,6 @@ class HistoryPref (context: Context) {
         var totalValue: Map<String, *> = pref.all
 
         for ((key, value) in totalValue) {
-
-            Log.d("history","$value")
             dataList.add("$value")
         }
 
