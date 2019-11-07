@@ -1,9 +1,9 @@
 package com.newgram.s2oul_android.search
 
 import android.os.Bundle
-import android.util.Log
 import android.view.KeyEvent
 import android.view.Menu
+import android.view.View
 import android.view.inputmethod.EditorInfo
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
@@ -13,6 +13,7 @@ import com.newgram.s2oul_android.R
 import com.newgram.s2oul_android.adapter.SearchHistoryAdapter
 import com.newgram.s2oul_android.searchResult.SearchResultActivity
 import kotlinx.android.synthetic.main.activity_search.*
+import kotlinx.android.synthetic.main.item_search_history.view.*
 import org.jetbrains.anko.sdk27.coroutines.onClick
 import org.jetbrains.anko.startActivity
 
@@ -35,6 +36,12 @@ class SearchActivity : AppCompatActivity(), SearchContract.View {
 
         presenter.loadRecord()
 
+        searchHistoryAdapter.itemClick = object: SearchHistoryAdapter.ItemClick {
+            override fun onClick(v: View, position: Int) {
+                startActivity<SearchResultActivity>("word" to v.searchHistory_history_tv.text)
+            }
+        }
+
         search_cancel_iv.onClick { finish() }
         search_et.setOnEditorActionListener(object: TextView.OnEditorActionListener{
             override fun onEditorAction(v: TextView?, actionId: Int, event: KeyEvent?): Boolean {
@@ -54,9 +61,6 @@ class SearchActivity : AppCompatActivity(), SearchContract.View {
     override fun showRecord(words : ArrayList<String>) {
         searchHistoryAdapter.list = words
         searchHistoryAdapter.notifyDataSetChanged()
-        for(i in 0..searchHistoryAdapter.list.size-1)
-            Log.d("showRecord", searchHistoryAdapter.list.get(i))
-
     }
 
     override fun goSearchResult() {

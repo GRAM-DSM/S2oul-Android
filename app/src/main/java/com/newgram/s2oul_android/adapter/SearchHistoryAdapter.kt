@@ -9,6 +9,11 @@ import androidx.recyclerview.widget.RecyclerView
 import com.newgram.s2oul_android.R
 
 class SearchHistoryAdapter(var context: Context): RecyclerView.Adapter<SearchHistoryAdapter.SearchHistoryViewHolder>() {
+    interface ItemClick {
+        fun onClick(v: View, position: Int)
+    }
+
+    var itemClick: ItemClick? = null
 
     var list = arrayListOf<String>()
 
@@ -19,7 +24,16 @@ class SearchHistoryAdapter(var context: Context): RecyclerView.Adapter<SearchHis
     override fun getItemCount() = list.size
 
     override fun onBindViewHolder(holder: SearchHistoryViewHolder, position: Int) {
-        holder.bind(list[position])
+        holder.run {
+            list[position].let {
+                bind(it)
+            }
+        }
+        if(itemClick != null) {
+            holder?.itemView?.setOnClickListener { v ->
+                itemClick?.onClick(v, position)
+            }
+        }
     }
 
     inner class SearchHistoryViewHolder(val view: View): RecyclerView.ViewHolder(view) {
