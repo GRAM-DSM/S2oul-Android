@@ -4,5 +4,5 @@ import com.newgram.s2oul_android.entity.TheaterResult
 import io.reactivex.Flowable
 
 interface TheaterSearchSource{
-    fun searchTheater(word: String): Flowable<Array<TheaterResult>>
+    fun searchTheater(word: String): Flowable<ArrayList<TheaterResult>>
 }

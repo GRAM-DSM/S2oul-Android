@@ -15,9 +15,7 @@ class ShowSearchAdapter(val context: Context): RecyclerView.Adapter<ShowSearchAd
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ShowSearchViewHolder
         = ShowSearchViewHolder(LayoutInflater.from(context).inflate(R.layout.item_search_show_result, parent, false))
 
-    override fun getItemCount(): Int {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
-    }
+    override fun getItemCount(): Int = items.size
 
     override fun onBindViewHolder(holder: ShowSearchViewHolder, position: Int) {
         holder.run {

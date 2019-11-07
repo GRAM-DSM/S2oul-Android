@@ -8,6 +8,6 @@ import io.reactivex.Flowable
 object TheaterSearchRepository: TheaterSearchSource {
     private val dataSource = TheaterSearchSourceImpl
 
-    override fun searchTheater(word: String): Flowable<Array<TheaterResult>> =
+    override fun searchTheater(word: String): Flowable<ArrayList<TheaterResult>> =
         dataSource.searchTheater(word)
 }

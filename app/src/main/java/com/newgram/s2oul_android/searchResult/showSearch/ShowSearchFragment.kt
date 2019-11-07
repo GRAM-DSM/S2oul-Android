@@ -27,7 +27,7 @@ class ShowSearchFragment : Fragment(), ShowSearchContract.View {
         presenter = ShowSearchPresenter(this@ShowSearchFragment)
 
         presenter.loadResult(activity.let {
-            it!!.intent.getStringExtra("showId")
+            it!!.intent.getStringExtra("word")
         })
 
         searchDetail_show_rv.adapter = adapter
