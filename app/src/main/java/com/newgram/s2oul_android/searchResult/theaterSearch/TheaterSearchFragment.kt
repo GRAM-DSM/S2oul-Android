@@ -29,9 +29,6 @@ class TheaterSearchFragment : Fragment(), TheaterSearchContract.View {
             it!!.intent.getStringExtra("word")
         }
         )
-
-        searchDetail_place_rv.adapter = adapter
-        searchDetail_place_rv.layoutManager = LinearLayoutManager(this.context, RecyclerView.VERTICAL, false)
     }
 
     override fun onCreateContextMenu(menu: ContextMenu, v: View, menuInfo: ContextMenu.ContextMenuInfo?) {
@@ -52,5 +49,11 @@ class TheaterSearchFragment : Fragment(), TheaterSearchContract.View {
     ): View? {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_theater_search, container, false)
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        searchDetail_place_rv.adapter = adapter
+        searchDetail_place_rv.layoutManager = LinearLayoutManager(this.context, RecyclerView.VERTICAL, false)
     }
 }

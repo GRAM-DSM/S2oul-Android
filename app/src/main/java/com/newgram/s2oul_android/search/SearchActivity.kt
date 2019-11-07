@@ -61,7 +61,7 @@ class SearchActivity : AppCompatActivity(), SearchContract.View {
 
     override fun goSearchResult() {
         presenter.saveRecord(search_et.text.toString())
-        startActivity<SearchResultActivity>("result" to search_et.text.toString())
+        startActivity<SearchResultActivity>("word" to search_et.text.toString())
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {

@@ -1,6 +1,7 @@
 package com.newgram.s2oul_android.searchResult.showSearch
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -19,19 +20,16 @@ class ShowSearchFragment : Fragment(), ShowSearchContract.View {
     override lateinit var presenter: ShowSearchContract.Presenter
 
     var items = ArrayList<ShowResult>()
-    val adapter = ShowSearchAdapter(this.context!!)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
         presenter = ShowSearchPresenter(this@ShowSearchFragment)
 
-        presenter.loadResult(activity.let {
-            it!!.intent.getStringExtra("word")
-        })
-
-        searchDetail_show_rv.adapter = adapter
-        searchDetail_show_rv.layoutManager = LinearLayoutManager(this.context!!, RecyclerView.VERTICAL, false)
+//        presenter.loadResult(activity.let {
+//            it!!.intent.getStringExtra("word")
+//        })
+        Log.d("context", "${this.context}")
     }
 
     override fun onCreateView(
@@ -41,8 +39,15 @@ class ShowSearchFragment : Fragment(), ShowSearchContract.View {
         return inflater.inflate(R.layout.fragment_show_search, container, false)
     }
 
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        val adapter = ShowSearchAdapter()
+        searchDetail_show_rv.adapter = adapter
+        searchDetail_show_rv.layoutManager = LinearLayoutManager(this.context!!, RecyclerView.VERTICAL, false)
+    }
+
     override fun showResult(list: ArrayList<ShowResult>) {
-        adapter.items = list
+        //adapter.items = list
     }
 
     override fun goDetail(id: String) {
