@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.RecyclerView
 import com.newgram.s2oul_android.R
+import com.newgram.s2oul_android.adapter.RecommendAdapter
 import com.ramotion.cardslider.CardSliderLayoutManager
 import com.ramotion.cardslider.CardSnapHelper
 import kotlinx.android.synthetic.main.fragment_recommend.*
