@@ -12,5 +12,6 @@ interface SearchContract {
     interface Presenter: BasePresenter {
         fun saveRecord(word: String)
         fun loadRecord()
+        fun deleteRecord()
     }
 }

@@ -22,4 +22,8 @@ class SearchPresenter (
         editor.saveData(word)
     }
 
+    override fun deleteRecord() {
+        editor.deleteData()
+    }
+
 }

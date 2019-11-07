@@ -25,8 +25,9 @@ class HistoryPref (context: Context) {
 
     }
 
-    fun deleteData(word: String) {
-
+    fun deleteData() {
+        pref.edit().clear()
+        pref.edit().commit()
     }
 
 }

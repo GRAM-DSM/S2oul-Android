@@ -38,7 +38,6 @@ class SearchHistoryAdapter(var context: Context): RecyclerView.Adapter<SearchHis
 
     inner class SearchHistoryViewHolder(val view: View): RecyclerView.ViewHolder(view) {
         val searchHistoryTv = view.findViewById<TextView>(R.id.searchHistory_history_tv)
-
         fun bind(name: String) {
             searchHistoryTv.text = name
         }
