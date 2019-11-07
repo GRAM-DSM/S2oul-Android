@@ -3,6 +3,7 @@ package com.newgram.s2oul_android
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.newgram.s2oul_android.map.MapFragment
 import com.newgram.s2oul_android.recommend.RecommendFragment
 import com.newgram.s2oul_android.search.SearchActivity
 import kotlinx.android.synthetic.main.activity_main.*
