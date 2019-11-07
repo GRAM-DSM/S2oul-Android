@@ -1,4 +1,4 @@
-package com.newgram.s2oul_android.search
+package com.newgram.s2oul_android.adapter
 
 import android.content.Context
 import android.view.LayoutInflater
@@ -8,38 +8,36 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.newgram.s2oul_android.R
 
-class SearchHistoryAdapter(var context: Context, val items: List<String>): RecyclerView.Adapter<SearchHistoryAdapter.SearchHistoryViewHolder>() {
+class SearchHistoryAdapter(var context: Context): RecyclerView.Adapter<SearchHistoryAdapter.SearchHistoryViewHolder>() {
+    interface ItemClick {
+        fun onClick(v: View, position: Int)
+    }
 
-    var list = items
+    var itemClick: ItemClick? = null
+
+    var list = arrayListOf<String>()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): SearchHistoryViewHolder {
         return SearchHistoryViewHolder(LayoutInflater.from(context).inflate(R.layout.item_search_history, parent, false))
     }
 
-    override fun getItemCount() = items.size
+    override fun getItemCount() = list.size
 
     override fun onBindViewHolder(holder: SearchHistoryViewHolder, position: Int) {
-        holder.bind(list[position])
+        holder.run {
+            list[position].let {
+                bind(it)
+            }
+        }
+        if(itemClick != null) {
+            holder?.itemView?.setOnClickListener { v ->
+                itemClick?.onClick(v, position)
+            }
+        }
     }
-
-//    fun filter(text: String) {
-//        list.clear()
-//        if (text.length == 0) {
-//            list = dummy
-//        } else {
-//            for (i in 0..dummy.size-1) {
-//                if (dummy.get(i).toLowerCase().contains(text)) {
-//                    list.add(dummy.get(i))
-//                    Log.d("Adapter", dummy.get(i))
-//                }
-//            }
-//        }
-//        notifyDataSetChanged()
-//    }
 
     inner class SearchHistoryViewHolder(val view: View): RecyclerView.ViewHolder(view) {
         val searchHistoryTv = view.findViewById<TextView>(R.id.searchHistory_history_tv)
-
         fun bind(name: String) {
             searchHistoryTv.text = name
         }

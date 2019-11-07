@@ -1,10 +1,11 @@
-package com.newgram.s2oul_android.recommend
+package com.newgram.s2oul_android.adapter
 
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.newgram.s2oul_android.R
+import com.newgram.s2oul_android.recommend.SliderCard
 
 class RecommendAdapter(val context: Context, val content: Array<Int>): RecyclerView.Adapter<SliderCard>() {
 

@@ -1,4 +1,4 @@
-package com.newgram.s2oul_android.detail.placeDetail
+package com.newgram.s2oul_android.adapter
 
 import android.content.Context
 import android.view.LayoutInflater
@@ -8,13 +8,15 @@ import android.widget.ImageView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.newgram.s2oul_android.R
-import com.newgram.s2oul_android.entity.ShowDetail
+import com.newgram.s2oul_android.entity.Show
 import kotlinx.android.synthetic.main.item_placedetail_shows.view.*
 
-class PlaceDetailAdapater(val context: Context, val items: List<ShowDetail>): RecyclerView.Adapter<PlaceDetailAdapater.PlaceDetailViewHolder>() {
+class PlaceDetailAdapater(val context: Context): RecyclerView.Adapter<PlaceDetailAdapater.PlaceDetailViewHolder>() {
     interface ItemClick {
         fun onClick(v: View, position: Int)
     }
+
+    private var items = arrayListOf(Show("", "name", "dd"), Show("", "hello", "aa"))
 
     var itemClick: ItemClick? = null
 
@@ -35,13 +37,11 @@ class PlaceDetailAdapater(val context: Context, val items: List<ShowDetail>): Re
         }
     }
 
-    override fun getItemCount(): Int {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
-    }
+    override fun getItemCount(): Int = items.size
 
     inner class PlaceDetailViewHolder(val view: View): RecyclerView.ViewHolder(view) {
         val image = itemView.findViewById<ImageView>(R.id.item_placedetail_iv)
-        fun bind(item: ShowDetail) {
+        fun bind(item: Show) {
             with(view) {
                 Glide.with(image)
                     .load(item.showImage)
@@ -49,6 +49,13 @@ class PlaceDetailAdapater(val context: Context, val items: List<ShowDetail>): Re
 
                 item_placedetail_name_tv.text = item.showName
             }
+        }
+    }
+
+    fun addItems(shows: ArrayList<Show>) {
+        shows.forEach {
+            items.add(it)
+            notifyItemInserted(items.size)
         }
     }
 

@@ -5,7 +5,7 @@
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".searchResult.SearchFilterActivity">
+        tools:context=".searchFilter.SearchFilterActivity">
 
     <androidx.appcompat.widget.Toolbar
             android:layout_width="match_parent"
@@ -32,21 +32,67 @@
                 tools:layout_editor_absoluteY="13dp"/>
 
     </androidx.appcompat.widget.Toolbar>
+
+    <TextView
+            android:text="정렬"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:id="@+id/filter_sort_tv"
+            android:fontFamily="@font/seoulnamsan_eb" android:textSize="20sp" android:textColor="#000"
+            app:layout_constraintEnd_toEndOf="@+id/toolbar" android:layout_marginStart="8dp"
+            app:layout_constraintStart_toStartOf="@+id/toolbar"
+            app:layout_constraintHorizontal_bias="0.491" android:layout_marginTop="16dp"
+            app:layout_constraintTop_toBottomOf="@+id/toolbar"/>
+
+    <RadioGroup
+            android:id="@+id/search_sort_radio_group"
+            android:layout_width="226dp"
+            android:layout_height="32dp"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="@+id/toolbar" android:layout_marginStart="8dp"
+            app:layout_constraintStart_toStartOf="@+id/toolbar"
+            app:layout_constraintTop_toBottomOf="@+id/filter_sort_tv"
+            android:layout_marginEnd="8dp" android:layout_marginTop="16dp">
+        <RadioButton
+                android:text="종료일"
+                android:fontFamily="@font/seoulnamsan_b"
+                android:button="@android:color/transparent"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:gravity="center"
+                android:layout_height="32dp"
+                android:background="@drawable/radio_selector"
+                android:id="@+id/search_filter_show_radio"
+                android:checked="true"
+                android:textColor="@color/radio_text_selector"/>
+        <RadioButton
+                android:text="가나다순"
+                android:gravity="center"
+                android:button="@android:color/transparent"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="32dp"
+                android:fontFamily="@font/seoulnamsan_b"
+                android:background="@drawable/radio_selector"
+                android:id="@+id/search_filter_place_radio"
+                android:textColor="@color/radio_text_selector"/>
+    </RadioGroup>
     <TextView
             android:text="장르"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/textView4" app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="8dp"
+            android:layout_height="0dp"
+            android:id="@+id/textView5" app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="8dp"
             app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="8dp"
-            app:layout_constraintTop_toBottomOf="@+id/toolbar" android:layout_marginTop="16dp"
-            android:fontFamily="@font/seoulnamsan_eb" android:textSize="20sp" android:textColor="#000"/>
+            android:fontFamily="@font/seoulnamsan_eb" android:textSize="20sp" android:textColor="#000"
+            android:layout_marginTop="16dp" app:layout_constraintTop_toTopOf="@+id/imageView3"/>
     <Button
             android:text="적용"
             android:background="@drawable/btn_filter_accept"
             android:layout_width="120dp"
             android:layout_height="35dp"
             android:fontFamily="@font/seoulnamsan_b"
-            android:textColor="#FFF"
+            android:textColor="@color/btn_filter_selector"
             android:textSize="14dp"
             android:id="@+id/searchFilter_accept_btn"
             app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintStart_toStartOf="parent"
@@ -68,7 +114,7 @@
             android:background="@drawable/radio_filter_selector"
             android:textColor="@color/radio_filter_text_selector"
             android:layout_marginTop="32dp"
-            app:layout_constraintTop_toBottomOf="@+id/textView4"
+            app:layout_constraintTop_toBottomOf="@+id/textView5"
             app:layout_constraintEnd_toStartOf="@+id/searchFilter_show_radio" android:layout_marginEnd="20dp"/>
     <Button
             android:background="@drawable/radio_filter_selector"
@@ -82,7 +128,7 @@
             android:fontFamily="@font/seoulnamsan_b"
             android:textColor="@color/radio_filter_text_selector"
             android:button="@drawable/radio_filter_show_selector"
-            android:layout_marginTop="32dp" app:layout_constraintTop_toBottomOf="@+id/textView4"
+            android:layout_marginTop="32dp" app:layout_constraintTop_toBottomOf="@+id/textView5"
             android:layout_marginEnd="8dp" app:layout_constraintEnd_toEndOf="parent" android:layout_marginStart="8dp"
             app:layout_constraintStart_toStartOf="parent" app:layout_constraintHorizontal_bias="0.498"/>
     <Button
@@ -99,7 +145,7 @@
             android:button="@drawable/radio_filter_musical_selector"
             app:layout_constraintStart_toEndOf="@+id/searchFilter_show_radio"
             android:layout_marginStart="20dp" android:layout_marginTop="32dp"
-            app:layout_constraintTop_toBottomOf="@+id/textView4"/>
+            app:layout_constraintTop_toBottomOf="@+id/textView5"/>
     <Button
             android:background="@drawable/radio_filter_selector"
             android:id="@+id/searchFilter_concert_radio"
@@ -134,6 +180,13 @@
             android:orientation="vertical"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" android:id="@+id/guideline2" app:layout_constraintGuide_percent="0.5"/>
+    <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="0dp" app:srcCompat="@drawable/ic_line"
+            android:id="@+id/imageView3" app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="8dp" app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="8dp"
+            app:layout_constraintHorizontal_bias="0.492"
+            app:layout_constraintTop_toBottomOf="@+id/search_sort_radio_group" android:layout_marginTop="16dp"/>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

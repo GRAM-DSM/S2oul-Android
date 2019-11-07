@@ -1,10 +1,29 @@
 package com.newgram.s2oul_android.detail.placeDetail
 
-class PlaceDetailPresenter() : PlaceDetailContract.Presenter {
-    override fun start() {
-        loadPlace()
+import android.util.Log
+import com.newgram.s2oul_android.data.repository.PlaceDetailRepository
+import com.newgram.s2oul_android.entity.Show
+
+class PlaceDetailPresenter(
+    private val view: PlaceDetailContract.View
+) : PlaceDetailContract.Presenter {
+
+    private val repository =  PlaceDetailRepository
+
+    init {
+        view.presenter = this
     }
-    override fun loadPlace() {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+    override fun start() {
+
+    }
+    override fun loadPlace(theaterId: String) {
+        var list: ArrayList<Show>
+        repository.loadPlace(theaterId).subscribe( {
+            list = it.shows
+            view.addData(list)
+            view.showPlaceDetail(it)
+        }, {
+            Log.d("loadPlace", "" + it.localizedMessage)
+        })
     }
 }
