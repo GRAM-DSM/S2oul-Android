@@ -26,7 +26,7 @@ class SearchResultActivity : AppCompatActivity() {
             ).commit()
         }
 
-        search_filter_radio_group.setOnCheckedChangeListener(radioCheckedChangeListener)
+        search_radio_group.setOnCheckedChangeListener(radioCheckedChangeListener)
 
         search_filter_iv.onClick{
             startActivity<SearchFilterActivity>()

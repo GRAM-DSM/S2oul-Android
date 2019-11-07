@@ -63,7 +63,7 @@
                 android:gravity="center"
                 android:layout_height="32dp"
                 android:background="@drawable/radio_selector"
-                android:id="@+id/search_show_radio"
+                android:id="@+id/search_filter_show_radio_"
                 android:checked="true"
                 android:textColor="@color/radio_text_selector"/>
         <RadioButton
@@ -75,7 +75,7 @@
                 android:layout_height="32dp"
                 android:fontFamily="@font/seoulnamsan_b"
                 android:background="@drawable/radio_selector"
-                android:id="@+id/search_place_radio"
+                android:id="@+id/search_filter_place_radio"
                 android:textColor="@color/radio_text_selector"/>
     </RadioGroup>
     <TextView

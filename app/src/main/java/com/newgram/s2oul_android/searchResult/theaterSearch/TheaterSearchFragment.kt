@@ -1,7 +1,6 @@
 package com.newgram.s2oul_android.searchResult.theaterSearch
 
 import android.os.Bundle
-import android.view.ContextMenu
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -18,25 +17,16 @@ import org.jetbrains.anko.support.v4.startActivity
 class TheaterSearchFragment : Fragment(), TheaterSearchContract.View {
 
     override lateinit var presenter: TheaterSearchContract.Presenter
-    val adapter = TheaterSearchAdapter(this.context!!)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
         presenter = TheaterSearchPresenter(this@TheaterSearchFragment)
 
-        presenter.loadResult(activity.let {
-            it!!.intent.getStringExtra("word")
-        }
-        )
-    }
-
-    override fun onCreateContextMenu(menu: ContextMenu, v: View, menuInfo: ContextMenu.ContextMenuInfo?) {
-        super.onCreateContextMenu(menu, v, menuInfo)
-    }
-
-    override fun showResult(list: ArrayList<TheaterResult>) {
-        adapter.items = list
+//        presenter.loadResult(activity.let {
+//            it!!.intent.getStringExtra("word")
+//        }
+//        )
     }
 
     override fun goTheaterDetail(theateId: String) {
@@ -53,7 +43,12 @@ class TheaterSearchFragment : Fragment(), TheaterSearchContract.View {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        val adapter = TheaterSearchAdapter()
         searchDetail_place_rv.adapter = adapter
         searchDetail_place_rv.layoutManager = LinearLayoutManager(this.context, RecyclerView.VERTICAL, false)
+    }
+
+    override fun showResult(list: ArrayList<TheaterResult>) {
+        //adapter.items = list
     }
 }

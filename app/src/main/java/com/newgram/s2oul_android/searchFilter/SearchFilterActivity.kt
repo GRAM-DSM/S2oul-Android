@@ -15,5 +15,8 @@ class SearchFilterActivity : AppCompatActivity() {
         searchFilter_accept_btn.onClick {
             finish()
         }
+        search_filter_cancel_iv.onClick {
+            finish()
+        }
     }
 }

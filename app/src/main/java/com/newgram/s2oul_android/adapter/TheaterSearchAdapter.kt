@@ -8,12 +8,12 @@ import androidx.recyclerview.widget.RecyclerView
 import com.newgram.s2oul_android.R
 import com.newgram.s2oul_android.entity.TheaterResult
 
-class TheaterSearchAdapter(val context: Context): RecyclerView.Adapter<TheaterSearchAdapter.TheaterSearchViewHolder>() {
+class TheaterSearchAdapter(): RecyclerView.Adapter<TheaterSearchAdapter.TheaterSearchViewHolder>() {
 
     var items = ArrayList<TheaterResult>()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TheaterSearchViewHolder
-        = TheaterSearchViewHolder(LayoutInflater.from(context).inflate(R.layout.item_search_place_result, parent, false))
+        = TheaterSearchViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.item_search_place_result, parent, false))
 
     override fun getItemCount(): Int
         = items.size

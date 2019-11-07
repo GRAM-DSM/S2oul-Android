@@ -4,7 +4,6 @@
              android:layout_width="match_parent"
              android:layout_height="match_parent"
              tools:context=".searchResult.theaterSearch.TheaterSearchFragment">
-
     <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/searchDetail_place_rv"
             android:layout_width="match_parent"
