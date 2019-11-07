@@ -17,9 +17,9 @@
             android:roundIcon="@mipmap/ic_logo_round"
             android:supportsRtl="true"
             android:theme="@style/AppTheme">
-        <activity android:name="com.newgram.s2oul_android.searchResult.SearchFilterActivity">
+        <activity android:name="com.newgram.s2oul_android.searchFilter.SearchFilterActivity">
         </activity>
-        <activity android:name="com.newgram.s2oul_android.searchResult.SearchDetailActivity">
+        <activity android:name="com.newgram.s2oul_android.searchResult.SearchResultActivity">
         </activity>
         <activity android:name="com.newgram.s2oul_android.detail.placeDetail.PlaceDetailActivity">
         </activity>

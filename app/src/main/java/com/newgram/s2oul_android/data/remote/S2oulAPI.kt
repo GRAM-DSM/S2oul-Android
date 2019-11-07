@@ -5,6 +5,7 @@ import io.reactivex.Flowable
 import retrofit2.Call
 import retrofit2.http.GET
 import retrofit2.http.Path
+import retrofit2.http.Query
 
 interface S2oulAPI {
     //DetailInfo
@@ -41,15 +42,15 @@ interface S2oulAPI {
     ): Call<Array<TheaterMap>>
 
     //Search
-    @GET("/show/showList/?searchType={genre}&keyword={showName}")
+    @GET("/show/showList/")
     fun searchShow(
-        @Path("genre") genre: String,
-        @Path("showName") showName: String
-    ): Call<Array<ShowResult>>
+        @Query("searchType") genre: String,
+        @Query("searchType") sort: String,
+        @Query("keyword") showName: String
+    ): Flowable<ArrayList<ShowResult>>
 
-    @GET("/theater/theaterList?keyword={theaterName}")
+    @GET("/theater/theaterList")
     fun searchTheater(
-        @Path("sort") genre: String,
-        @Path("theaterName") theaterName: String
-    ): Call<Array<TheaterResult>>
+        @Query("keyword") theaterName: String
+    ): Flowable<ArrayList<TheaterResult>>
 }

@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.newgram.s2oul_android.R
+import com.newgram.s2oul_android.adapter.PlaceDetailAdapater
 import com.newgram.s2oul_android.detail.showDetail.ShowDetailActivity
 import com.newgram.s2oul_android.entity.Show
 import com.newgram.s2oul_android.entity.TheaterDetail
@@ -25,7 +26,7 @@ class PlaceDetailActivity : AppCompatActivity(), PlaceDetailContract.View {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_place_detail)
 
-        PlaceDetailPresenter(this@PlaceDetailActivity)
+        presenter = PlaceDetailPresenter(this@PlaceDetailActivity)
 
         presenter.loadPlace(intent.getStringExtra("theaterId"))
 
@@ -45,7 +46,7 @@ class PlaceDetailActivity : AppCompatActivity(), PlaceDetailContract.View {
         placeDetail_name_tv.text = intent.getStringExtra("name")
         placeDetail_number_tv.text = theater.phoneNumber
         placeDetail_address_tv.text = theater.location
-        placeDetail_sitcount_tv.text = theater.seatNumber
+        placeDetail_sitcount_tv.text = theater.seatNumber.toString()
         Glide.with(this).load(theater.image).into(placeDetail_pic_iv)
     }
 
