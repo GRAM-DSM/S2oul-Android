@@ -5,7 +5,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.create
 
 object RetrofitProvider {
-    private const val BASE_URL = ""
+    private const val BASE_URL = "https://"
     var api: S2oulAPI
 
     init {

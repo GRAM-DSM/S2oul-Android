@@ -11,8 +11,6 @@ import com.newgram.s2oul_android.searchResult.theaterSearch.TheaterSearchFragmen
 import kotlinx.android.synthetic.main.activity_result_detail.*
 import org.jetbrains.anko.sdk27.coroutines.onClick
 
-
-
 class SearchResultActivity : AppCompatActivity() {
 
     private val REQUEST_ACT = 1
