@@ -1,4 +1,4 @@
-package com.newgram.s2oul_android.placeInfo
+package com.newgram.s2oul_android.info.placeInfo
 
 import com.newgram.s2oul_android.BasePresenter
 import com.newgram.s2oul_android.BaseView

@@ -1,4 +1,4 @@
-package com.newgram.s2oul_android
+package com.newgram.s2oul_android.info
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -6,8 +6,9 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.RadioGroup
 import androidx.fragment.app.Fragment
-import com.newgram.s2oul_android.placeInfo.PlaceInfoFragment
-import com.newgram.s2oul_android.showInfo.ShowInfoFragment
+import com.newgram.s2oul_android.R
+import com.newgram.s2oul_android.info.placeInfo.PlaceInfoFragment
+import com.newgram.s2oul_android.info.showInfo.ShowInfoFragment
 import kotlinx.android.synthetic.main.fragment_info.*
 
 class InfoFragment : Fragment() {

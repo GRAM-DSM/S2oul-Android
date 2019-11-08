@@ -1,4 +1,4 @@
-package com.newgram.s2oul_android.placeInfo
+package com.newgram.s2oul_android.info.placeInfo
 
 import android.util.Log
 import com.newgram.s2oul_android.data.repository.PlaceInfoRepository

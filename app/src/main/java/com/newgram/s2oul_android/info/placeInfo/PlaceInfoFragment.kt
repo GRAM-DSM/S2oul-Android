@@ -1,4 +1,4 @@
-package com.newgram.s2oul_android.placeInfo
+package com.newgram.s2oul_android.info.placeInfo
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -21,7 +21,7 @@ class PlaceInfoFragment : Fragment(), PlaceInfoContract.View {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         presenter = PlaceInfoPresenter(this)
-        presenter.loadPlace()
+        //presenter.loadPlace()
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
