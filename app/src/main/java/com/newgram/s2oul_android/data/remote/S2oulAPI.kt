@@ -30,10 +30,8 @@ interface S2oulAPI {
         @Path("genre") genre: String
     ): Call<Array<ShowInfo>>
 
-    @GET("/Info/theaterAlphabet/{genre}")
-    fun showTheaterAlphabet(
-        @Path("genre") genre: String
-    ): Call<Array<TheaterInfo>>
+    @GET("/Info/theaterAlphabet")
+    fun showTheaterAlphabet(): Flowable<ArrayList<TheaterInfo>>
 
     //Map
     @GET("/map/{latAndLng}")
