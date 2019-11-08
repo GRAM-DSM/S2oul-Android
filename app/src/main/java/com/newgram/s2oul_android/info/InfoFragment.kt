@@ -10,12 +10,10 @@ import com.newgram.s2oul_android.R
 import com.newgram.s2oul_android.info.placeInfo.PlaceInfoFragment
 import com.newgram.s2oul_android.info.showInfo.ShowInfoFragment
 import kotlinx.android.synthetic.main.fragment_info.*
+import org.jetbrains.anko.sdk27.coroutines.onClick
+import org.jetbrains.anko.support.v4.startActivity
 
 class InfoFragment : Fragment() {
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-
-    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -27,6 +25,9 @@ class InfoFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        info_filter_btn.onClick {
+            startActivity<InfoFilterActivity>()
+        }
 
         fragmentManager!!.beginTransaction().run {
             replace(

@@ -7,7 +7,9 @@
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION">
     </uses-permission>
 
-    <meta-data android:name="com.kakao.sdk.AppKey" android:value="699423233b502ac63c9ca8a5783160cb"/>
+    <meta-data
+            android:name="com.kakao.sdk.AppKey"
+            android:value="699423233b502ac63c9ca8a5783160cb"/>
 
     <application
             android:allowBackup="true"
@@ -17,13 +19,15 @@
             android:roundIcon="@mipmap/ic_logo_round"
             android:supportsRtl="true"
             android:theme="@style/AppTheme">
-        <activity android:name="com.newgram.s2oul_android.searchFilter.SearchFilterActivity">
+        <activity android:name=".info.InfoFilterActivity">
         </activity>
-        <activity android:name="com.newgram.s2oul_android.searchResult.SearchResultActivity">
+        <activity android:name=".searchFilter.SearchFilterActivity">
         </activity>
-        <activity android:name="com.newgram.s2oul_android.detail.placeDetail.PlaceDetailActivity">
+        <activity android:name=".searchResult.SearchResultActivity">
         </activity>
-        <activity android:name="com.newgram.s2oul_android.detail.showDetail.ShowDetailActivity">
+        <activity android:name=".detail.placeDetail.PlaceDetailActivity">
+        </activity>
+        <activity android:name=".detail.showDetail.ShowDetailActivity">
         </activity>
         <activity android:name=".search.SearchActivity">
         </activity>

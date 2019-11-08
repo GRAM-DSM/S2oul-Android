@@ -18,7 +18,7 @@ class SearchFilterActivity : AppCompatActivity() {
 
         search_sort_radio_group.setOnCheckedChangeListener(sortChangeListener)
 
-        searchFilter_accept_btn.onClick {
+        search_filter_accept_btn.onClick {
             setResult(1)
             finish()
         }
@@ -30,10 +30,10 @@ class SearchFilterActivity : AppCompatActivity() {
     private val sortChangeListener = RadioGroup.OnCheckedChangeListener { item, i ->
         when(item.checkedRadioButtonId) {
             R.id.search_filter_show_radio -> {
-                sort = search_filter_show_radio.text.toString()
+                sort = search_filter_date_radio.text.toString()
             }
-            R.id.search_filter_place_radio -> {
-                sort = search_filter_place_radio.text.toString()
+            R.id.search_filter_alphabet_radio -> {
+                sort = search_filter_alphabet_radio.text.toString()
             }
         }
 
