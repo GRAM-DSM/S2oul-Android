@@ -1,5 +1,6 @@
 package com.newgram.s2oul_android.searchResult
 
+import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
 import android.widget.RadioGroup
@@ -30,6 +31,8 @@ class SearchResultActivity : AppCompatActivity() {
 
         search_filter_iv.onClick{
             val intent = Intent(this@SearchResultActivity, SearchFilterActivity::class.java)
+            intent.putExtra("sort", "date")
+            intent.putExtra("genre", "all")
             startActivityForResult(intent, REQUEST_ACT)
         }
 
@@ -40,6 +43,12 @@ class SearchResultActivity : AppCompatActivity() {
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
+        if (resultCode == Activity.RESULT_OK) {
+            when(requestCode) {
+                REQUEST_ACT -> {
+                }
+            }
+        }
 
 
     }

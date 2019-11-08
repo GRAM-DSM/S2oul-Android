@@ -1,5 +1,6 @@
 package com.newgram.s2oul_android.info
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -11,7 +12,6 @@ import com.newgram.s2oul_android.info.placeInfo.PlaceInfoFragment
 import com.newgram.s2oul_android.info.showInfo.ShowInfoFragment
 import kotlinx.android.synthetic.main.fragment_info.*
 import org.jetbrains.anko.sdk27.coroutines.onClick
-import org.jetbrains.anko.support.v4.startActivity
 
 class InfoFragment : Fragment() {
 
@@ -26,7 +26,8 @@ class InfoFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         info_filter_btn.onClick {
-            startActivity<InfoFilterActivity>()
+            val intent = Intent(context, InfoFilterActivity::class.java)
+            startActivityForResult(intent, 2)
         }
 
         fragmentManager!!.beginTransaction().run {

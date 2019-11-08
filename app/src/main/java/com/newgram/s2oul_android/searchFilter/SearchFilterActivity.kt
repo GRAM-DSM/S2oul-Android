@@ -1,6 +1,7 @@
 package com.newgram.s2oul_android.searchFilter
 
 import android.os.Bundle
+import android.util.Log
 import android.widget.RadioGroup
 import androidx.appcompat.app.AppCompatActivity
 import com.newgram.s2oul_android.R
@@ -9,19 +10,26 @@ import org.jetbrains.anko.sdk27.coroutines.onClick
 
 class SearchFilterActivity : AppCompatActivity() {
 
-    var genre = ""
-    var sort = ""
+    var genre = "all"
+    var sort = "date"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_search_filter)
 
         search_sort_radio_group.setOnCheckedChangeListener(sortChangeListener)
+        search_filter_all_radio.requestFocus()
 
         search_filter_accept_btn.onClick {
-            setResult(1)
-            finish()
+//            val intent = Intent()
+//            intent.putExtra("genre", "${currentFocus}")
+//            intent.putExtra("sort", sort)
+//            setResult(Activity.RESULT_OK, intent)
+//            finish()
+            Log.d("안뇽", "${(search_filter_all_radio.id)}")
+            Log.d("현재 포커스","${currentFocus.id}")
         }
+
         search_filter_cancel_iv.onClick {
             finish()
         }
@@ -30,15 +38,14 @@ class SearchFilterActivity : AppCompatActivity() {
     private val sortChangeListener = RadioGroup.OnCheckedChangeListener { item, i ->
         when(item.checkedRadioButtonId) {
             R.id.search_filter_show_radio -> {
-                sort = search_filter_date_radio.text.toString()
+                sort = "date"
             }
             R.id.search_filter_alphabet_radio -> {
-                sort = search_filter_alphabet_radio.text.toString()
+                sort = "alphabet"
             }
         }
 
         false
     }
 
-//    private val genreChangeListener = Button.
 }
