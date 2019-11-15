@@ -4,12 +4,9 @@
 
     <uses-permission android:name="android.permission.INTERNET">
     </uses-permission>
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION">
-    </uses-permission>
-
-    <meta-data
-            android:name="com.kakao.sdk.AppKey"
-            android:value="699423233b502ac63c9ca8a5783160cb"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <application
             android:allowBackup="true"
@@ -19,7 +16,12 @@
             android:roundIcon="@mipmap/ic_logo_round"
             android:supportsRtl="true"
             android:theme="@style/AppTheme">
-        <activity android:name=".info.InfoFilterActivity">
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="@string/google_maps_key"/>
+
+        <activity android:name="com.newgram.s2oul_android.searchFilter.SearchFilterActivity">
         </activity>
         <activity android:name=".searchFilter.SearchFilterActivity">
         </activity>
