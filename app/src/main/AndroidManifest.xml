@@ -23,11 +23,13 @@
 
         <activity android:name="com.newgram.s2oul_android.searchFilter.SearchFilterActivity">
         </activity>
-        <activity android:name="com.newgram.s2oul_android.searchResult.SearchResultActivity">
+        <activity android:name=".searchFilter.SearchFilterActivity">
         </activity>
-        <activity android:name="com.newgram.s2oul_android.detail.placeDetail.PlaceDetailActivity">
+        <activity android:name=".searchResult.SearchResultActivity">
         </activity>
-        <activity android:name="com.newgram.s2oul_android.detail.showDetail.ShowDetailActivity">
+        <activity android:name=".detail.placeDetail.PlaceDetailActivity">
+        </activity>
+        <activity android:name=".detail.showDetail.ShowDetailActivity">
         </activity>
         <activity android:name=".search.SearchActivity">
         </activity>

@@ -20,8 +20,8 @@ interface S2oulAPI {
     ): Flowable<TheaterDetail>
 
     //Info
-    @GET("/Info/showEndDate/{genre}")
-    fun showEndData(
+    @GET("/Info/showStartDate/{genre}")
+    fun showStartData(
         @Path("genre") genre: String
     ): Flowable<ArrayList<ShowInfo>>
 
