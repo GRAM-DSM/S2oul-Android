@@ -15,10 +15,7 @@ import com.google.android.gms.location.FusedLocationProviderClient
 import com.google.android.gms.location.LocationCallback
 import com.google.android.gms.location.LocationRequest
 import com.google.android.gms.location.LocationResult
-import com.google.android.gms.maps.CameraUpdateFactory
-import com.google.android.gms.maps.GoogleMap
-import com.google.android.gms.maps.OnMapReadyCallback
-import com.google.android.gms.maps.SupportMapFragment
+import com.google.android.gms.maps.*
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.MarkerOptions
 import com.newgram.s2oul_android.R
@@ -28,8 +25,8 @@ import org.jetbrains.anko.support.v4.toast
 import org.jetbrains.anko.yesButton
 
 class MapFragment : Fragment(), OnMapReadyCallback {
-    private lateinit var mMap: GoogleMap
-
+    private var mapView: MapView? = null
+    private var googleMap: GoogleMap? = null
 
     private lateinit var fusedLocationProviderClient: FusedLocationProviderClient
     private lateinit var locationRequest: LocationRequest
@@ -39,24 +36,20 @@ class MapFragment : Fragment(), OnMapReadyCallback {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        //화면 안꺼지게 하기
-        //activity!!.window!!.addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON)
-        //SupportMapFragment 가져와서 지도 준비되면 알림을 받음
     }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_map, container, false)
+        var view: View = inflater.inflate(R.layout.fragment_map, container, false)
+        val mapFragment = childFragmentManager!!.findFragmentById(R.id.map) as SupportMapFragment
+        mapFragment.getMapAsync(this)
+        return view
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
-        val mapFragment = fragmentManager!!.findFragmentById(R.id.map) as SupportMapFragment
-        mapFragment.getMapAsync(this)
         locationInit()
     }
 
@@ -78,13 +71,13 @@ class MapFragment : Fragment(), OnMapReadyCallback {
 
     override fun onMapReady(googleMap: GoogleMap) {
         //구글 맵 객체 불러오기!
-        mMap = googleMap
+        this.googleMap = googleMap
 
         // 마커 위치 설정 Add a marker in Sydney and move the camer
         val dsm = LatLng(36.391442, 127.363347)
 
-        mMap.addMarker(MarkerOptions().position(dsm).title("대마고에 마커를 표시했습니다!")) //Marker in Sydney
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(dsm))
+        googleMap.addMarker(MarkerOptions().position(dsm).title("대마고에 마커를 표시했습니다!")) //Marker in Sydney
+        googleMap.moveCamera(CameraUpdateFactory.newLatLng(dsm))
 
     }
 
@@ -114,12 +107,12 @@ class MapFragment : Fragment(), OnMapReadyCallback {
             location?.run {
                 //14 level로 확대하고 현재 위치로 카메라 이동
                 val latLng = LatLng(latitude, longitude)
-                mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(latLng, 17f))
+                //mapView.animateCamera(CameraUpdateFactory.newLatLngZoom(latLng, 17f))
 
                 Log.d("MapsActivity", "위도: $latitude, 경도: $longitude")
 
                 //자기위치 표시
-                //mMap.isMyLocationEnabled = true
+                //mapView.isMyLocationEnabled = true
             }
         }
     }

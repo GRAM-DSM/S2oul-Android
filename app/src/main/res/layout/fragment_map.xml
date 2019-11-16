@@ -6,9 +6,7 @@
         xmlns:android="http://schemas.android.com/apk/res/android">
 
 
-    <FrameLayout
-            xmlns:android="http://schemas.android.com/apk/res/android"
-            xmlns:tools="http://schemas.android.com/tools"
+    <fragment
             android:layout_margin="10dp"
             android:layout_width="390dp"
             android:layout_height="490dp"
