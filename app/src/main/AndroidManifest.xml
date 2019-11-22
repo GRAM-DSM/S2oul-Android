@@ -9,6 +9,7 @@
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <application
+            android:name=".App"
             android:allowBackup="true"
             android:icon="@mipmap/ic_logo"
             android:label="@string/app_name"
@@ -23,7 +24,7 @@
 
         <activity android:name="com.newgram.s2oul_android.searchFilter.SearchFilterActivity">
         </activity>
-        <activity android:name=".searchFilter.SearchFilterActivity">
+        <activity android:name=".info.InfoFilterActivity">
         </activity>
         <activity android:name=".searchResult.SearchResultActivity">
         </activity>

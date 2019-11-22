@@ -5,11 +5,18 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.newgram.s2oul_android.R
-import com.newgram.s2oul_android.entity.ShowResult
+import com.newgram.s2oul_android.entity.ShowInfo
+import kotlinx.android.synthetic.main.item_search_show_result.view.*
 
-class ShowSearchAdapter(): RecyclerView.Adapter<ShowSearchAdapter.ShowSearchViewHolder>() {
+class ShowSearchAdapter: RecyclerView.Adapter<ShowSearchAdapter.ShowSearchViewHolder>() {
 
-    var items = ArrayList<ShowResult>()
+    interface ItemClick {
+        fun onClick(v: View, position: Int)
+    }
+
+    var itemClick: ItemClick? = null
+
+    var items = ArrayList<ShowInfo>()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ShowSearchViewHolder
         = ShowSearchViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.item_search_show_result, parent, false))
@@ -22,11 +29,20 @@ class ShowSearchAdapter(): RecyclerView.Adapter<ShowSearchAdapter.ShowSearchView
                 bind(it)
             }
         }
+
+        if(itemClick != null) {
+            holder?.itemView?.setOnClickListener { v ->
+                itemClick?.onClick(v, position)
+            }
+        }
     }
 
-    class ShowSearchViewHolder(view: View): RecyclerView.ViewHolder(view) {
-        fun bind(item: ShowResult) {
-
+    class ShowSearchViewHolder(val view: View): RecyclerView.ViewHolder(view) {
+        fun bind(item: ShowInfo) {
+            with(view) {
+                searchResult_show_name_tv.text = item.showName
+                searchResult_show_place_tv.text = item.theaterName
+            }
         }
     }
 
