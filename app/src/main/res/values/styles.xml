@@ -8,4 +8,10 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="TextTheme">
+        <item name="android:fontFamily">@font/seoulnamsan_eb</item>
+        <item name="android:textSize">13dp</item>
+        <item name="android:textColor">#000000</item>
+    </style>
+
 </resources>
