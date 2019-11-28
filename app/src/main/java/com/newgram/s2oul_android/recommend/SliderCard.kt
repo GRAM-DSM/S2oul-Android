@@ -4,8 +4,11 @@ import android.graphics.Bitmap
 import android.view.View
 import android.widget.ImageView
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.newgram.s2oul_android.R
+import com.newgram.s2oul_android.entity.TheaterInfo
 import com.newgram.s2oul_android.util.DecodeBitmapTask
+import kotlinx.android.synthetic.main.item_recommend.view.*
 
 class SliderCard(itemView: View): RecyclerView.ViewHolder(itemView), DecodeBitmapTask.Listener {
 
@@ -38,6 +41,12 @@ class SliderCard(itemView: View): RecyclerView.ViewHolder(itemView), DecodeBitma
     fun loadBitmap(resId: Int) {
         task = DecodeBitmapTask(itemView.resources, resId, viewWidth, viewHeight, this)
         task.execute()
+    }
+
+    fun bind(item: TheaterInfo) {
+        with(itemView) {
+            Glide.with(itemView).load(item.theaterImage).centerCrop().into(recommend_image_iv)
+        }
     }
 
     override fun onPostExecuted(bitmap: Bitmap?) {

@@ -1,14 +1,19 @@
 package com.newgram.s2oul_android.adapter
 
-import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.newgram.s2oul_android.R
 import com.newgram.s2oul_android.entity.TheaterResult
+import kotlinx.android.synthetic.main.item_search_place_result.view.*
 
 class TheaterSearchAdapter(): RecyclerView.Adapter<TheaterSearchAdapter.TheaterSearchViewHolder>() {
+    interface ItemClick {
+        fun onClick(v: View, position: Int)
+    }
+
+    var itemClick: ItemClick? = null
 
     var items = ArrayList<TheaterResult>()
 
@@ -24,11 +29,21 @@ class TheaterSearchAdapter(): RecyclerView.Adapter<TheaterSearchAdapter.TheaterS
                 bind(it)
             }
         }
+
+        if(itemClick != null) {
+            holder?.itemView?.setOnClickListener { v ->
+                itemClick?.onClick(v, position)
+            }
+        }
     }
 
-    class TheaterSearchViewHolder(view: View): RecyclerView.ViewHolder(view) {
+    class TheaterSearchViewHolder(val view: View): RecyclerView.ViewHolder(view) {
         fun bind(item: TheaterResult) {
-
+            with(view) {
+                searchResult_place_name_tv.text = item.theaterName
+                searchResult_place_place_tv.text = item.location
+                searchResult_place_number_tv.text = item.phoneNumber
+            }
         }
     }
 }

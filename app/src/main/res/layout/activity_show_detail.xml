@@ -178,16 +178,27 @@
 
             <ImageView
                     android:id="@+id/showDetail_line"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
                     android:src="@drawable/ic_line"
                     android:layout_gravity="center"
                     android:layout_marginBottom="16dp"/>
 
             <ImageView
+                    android:src="@drawable/ic_summary1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:adjustViewBounds="true"
+                    android:id="@+id/showDetail_summary_iv" app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"/>
+
+            <ImageView
+                    android:id="@+id/showDetail_line_2"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:id="@+id/showDetail_summary_iv"/>
+                    android:src="@drawable/ic_line"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="16dp"/>
 
             <androidx.constraintlayout.widget.ConstraintLayout
                     android:id="@+id/showDetail_place_layout"
@@ -228,9 +239,11 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content" tools:srcCompat="@tools:sample/avatars"
                         android:id="@+id/showDetail_place_iv"
-                        android:layout_marginEnd="28dp"
-                        app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintTop_toTopOf="parent"/>
+                        android:gravity="right"
+                        app:layout_constraintBottom_toBottomOf="@id/showDetail_place_layout"
+                        app:layout_constraintTop_toTopOf="@id/showDetail_place_layout"
+                        app:layout_constraintVertical_bias="0.0"
+                        app:layout_constraintEnd_toEndOf="@id/showDetail_place_layout"/>
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 

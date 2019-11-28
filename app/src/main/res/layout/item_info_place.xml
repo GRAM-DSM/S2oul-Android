@@ -3,7 +3,7 @@
                                                    xmlns:app="http://schemas.android.com/apk/res-auto"
                                                    xmlns:tools="http://schemas.android.com/tools"
                                                    android:orientation="vertical"
-                                                   android:layout_width="318dp"
+                                                   android:layout_width="match_parent"
                                                    android:layout_height="81dp">
 
     <TextView
@@ -24,13 +24,15 @@
             android:layout_marginStart="26dp" android:textSize="11dp"/>
     <TextView
             android:text="placeName"
+            style="@style/TextTheme"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" android:id="@+id/info_place_placeName_tv"
             app:layout_constraintTop_toTopOf="parent" app:layout_constraintStart_toStartOf="parent"
-            android:layout_marginTop="2dp" android:layout_marginStart="26dp" android:textSize="14dp"/>
+            android:layout_marginTop="2dp" android:layout_marginStart="26dp"/>
     <ImageView
-            android:layout_width="72dp"
-            android:layout_height="82dp" tools:srcCompat="@tools:sample/avatars" android:id="@+id/info_place_placeImage_iv"
+            android:layout_width="80dp"
+            android:layout_height="80dp" tools:srcCompat="@tools:sample/avatars"
+            android:id="@+id/info_place_placeImage_iv"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintEnd_toEndOf="parent"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

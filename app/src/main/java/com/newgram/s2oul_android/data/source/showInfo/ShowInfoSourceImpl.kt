@@ -12,6 +12,6 @@ object ShowInfoSourceImpl : ShowInfoSource {
 
 
     override fun loadShowDate(genre: String): Flowable<ArrayList<ShowInfo>> =
-        api.showEndData(genre).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread())
+        api.showStartData(genre).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread())
 
 }

@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".info.InfoFilterActivity">
+
+    <androidx.appcompat.widget.Toolbar
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimary"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" android:id="@+id/toolbar">
+        <ImageView
+                android:id="@+id/info_filter_cancel_iv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_cancel"/>
+
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="필터"
+                android:fontFamily="@font/seoulnamsan_eb"
+                android:textSize="21dp"
+                android:textColor="#FFF"
+                tools:layout_editor_absoluteX="170dp"
+                tools:layout_editor_absoluteY="13dp"/>
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <TextView
+            android:text="정렬"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:id="@+id/filter_sort_tv"
+            android:fontFamily="@font/seoulnamsan_eb" android:textSize="20sp" android:textColor="#000"
+            app:layout_constraintEnd_toEndOf="@+id/toolbar" android:layout_marginStart="8dp"
+            app:layout_constraintStart_toStartOf="@+id/toolbar"
+            app:layout_constraintHorizontal_bias="0.491" android:layout_marginTop="16dp"
+            app:layout_constraintTop_toBottomOf="@+id/toolbar"/>
+
+    <RadioGroup
+            android:id="@+id/info_sort_radio_group"
+            android:layout_width="226dp"
+            android:layout_height="32dp"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="@+id/toolbar" android:layout_marginStart="8dp"
+            app:layout_constraintStart_toStartOf="@+id/toolbar"
+            app:layout_constraintTop_toBottomOf="@+id/filter_sort_tv"
+            android:layout_marginEnd="8dp" android:layout_marginTop="16dp">
+        <RadioButton
+                android:text="종료일"
+                android:fontFamily="@font/seoulnamsan_b"
+                android:button="@android:color/transparent"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:gravity="center"
+                android:layout_height="32dp"
+                android:background="@drawable/radio_selector"
+                android:id="@+id/info_filter_date_radio"
+                android:checked="true"
+                android:textColor="@color/radio_text_selector"/>
+        <RadioButton
+                android:text="가나다순"
+                android:gravity="center"
+                android:button="@android:color/transparent"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="32dp"
+                android:fontFamily="@font/seoulnamsan_b"
+                android:background="@drawable/radio_selector"
+                android:id="@+id/info_filter_alphabet_radio"
+                android:textColor="@color/radio_text_selector"/>
+    </RadioGroup>
+    <TextView
+            android:text="장르"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:id="@+id/textView5" app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="8dp"
+            app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="8dp"
+            android:fontFamily="@font/seoulnamsan_eb" android:textSize="20sp" android:textColor="#000"
+            android:layout_marginTop="16dp" app:layout_constraintTop_toTopOf="@+id/imageView3"/>
+    <Button
+            android:text="적용"
+            android:background="@drawable/btn_filter_accept"
+            android:layout_width="120dp"
+            android:layout_height="35dp"
+            android:fontFamily="@font/seoulnamsan_b"
+            android:textColor="@color/btn_filter_selector"
+            android:textSize="14dp"
+            android:id="@+id/info_filter_accept_btn"
+            app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="8dp" app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="8dp"
+            android:layout_marginBottom="60dp" app:layout_constraintHorizontal_bias="0.498"/>
+
+
+    <Button
+            android:id="@+id/info_filter_all_radio"
+            android:layout_width="90dp"
+            android:layout_height="120dp"
+            android:text="전체"
+            android:drawableTop="@drawable/radio_filter_all_selector"
+            android:paddingTop="40dp"
+            android:focusableInTouchMode="true"
+            android:focusedByDefault="true"
+            android:fontFamily="@font/seoulnamsan_b"
+            android:button="@android:color/transparent"
+            android:background="@drawable/radio_filter_selector"
+            android:textColor="@color/radio_filter_text_selector"
+            android:layout_marginTop="32dp"
+            app:layout_constraintTop_toBottomOf="@+id/textView5"
+            app:layout_constraintEnd_toStartOf="@+id/info_filter_show_radio" android:layout_marginEnd="20dp"/>
+    <Button
+            android:background="@drawable/radio_filter_selector"
+            android:id="@+id/info_filter_show_radio"
+            android:layout_width="90dp"
+            android:layout_height="120dp"
+            android:drawableTop="@drawable/radio_filter_show_selector"
+            android:paddingTop="30dp"
+            android:text="연극"
+            android:focusableInTouchMode="true"
+            android:fontFamily="@font/seoulnamsan_b"
+            android:textColor="@color/radio_filter_text_selector"
+            android:button="@drawable/radio_filter_show_selector"
+            android:layout_marginTop="32dp" app:layout_constraintTop_toBottomOf="@+id/textView5"
+            android:layout_marginEnd="8dp" app:layout_constraintEnd_toEndOf="parent" android:layout_marginStart="8dp"
+            app:layout_constraintStart_toStartOf="parent" app:layout_constraintHorizontal_bias="0.498"/>
+    <Button
+            android:background="@drawable/radio_filter_selector"
+            android:id="@+id/info_filter_musical_radio"
+            android:layout_width="90dp"
+            android:layout_height="120dp"
+            android:paddingTop="30dp"
+            android:text="뮤지컬"
+            android:drawableTop="@drawable/radio_filter_musical_selector"
+            android:focusableInTouchMode="true"
+            android:fontFamily="@font/seoulnamsan_b"
+            android:textColor="@color/radio_filter_text_selector"
+            android:button="@drawable/radio_filter_musical_selector"
+            app:layout_constraintStart_toEndOf="@+id/info_filter_show_radio"
+            android:layout_marginStart="20dp" android:layout_marginTop="32dp"
+            app:layout_constraintTop_toBottomOf="@+id/textView5"/>
+    <Button
+            android:background="@drawable/radio_filter_selector"
+            android:id="@+id/info_filter_concert_radio"
+            android:layout_width="90dp"
+            android:layout_height="120dp"
+            android:drawableTop="@drawable/radio_filter_concert_selector"
+            android:paddingTop="30dp"
+            android:text="콘서트/전시"
+            android:focusableInTouchMode="true"
+            android:fontFamily="@font/seoulnamsan_b"
+            android:textColor="@color/radio_filter_text_selector"
+            android:button="@drawable/radio_filter_concert_selector"
+            android:layout_marginEnd="10dp"
+            app:layout_constraintEnd_toStartOf="@+id/guideline2" android:layout_marginTop="20dp"
+            app:layout_constraintTop_toBottomOf="@+id/info_filter_show_radio"/>
+    <Button
+            android:background="@drawable/radio_filter_selector"
+            android:id="@+id/info_filter_family_radio"
+            android:layout_width="90dp"
+            android:layout_height="120dp"
+            android:drawableTop="@drawable/radio_filter_family_selector"
+            android:text="아동/가족"
+            android:focusableInTouchMode="true"
+            android:paddingTop="30dp"
+            android:fontFamily="@font/seoulnamsan_b"
+            android:button="@drawable/radio_filter_family_selector"
+            android:textColor="@color/radio_filter_text_selector"
+            android:layout_marginStart="10dp" app:layout_constraintStart_toStartOf="@+id/guideline2"
+            android:layout_marginTop="20dp" app:layout_constraintTop_toBottomOf="@+id/info_filter_show_radio"/>
+
+    <androidx.constraintlayout.widget.Guideline
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:id="@+id/guideline2" app:layout_constraintGuide_percent="0.5"/>
+    <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="0dp" app:srcCompat="@drawable/ic_line"
+            android:id="@+id/imageView3" app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="8dp" app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="8dp"
+            app:layout_constraintHorizontal_bias="0.492"
+            app:layout_constraintTop_toBottomOf="@+id/info_sort_radio_group" android:layout_marginTop="16dp"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

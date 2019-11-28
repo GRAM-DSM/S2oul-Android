@@ -10,6 +10,11 @@ import com.newgram.s2oul_android.entity.TheaterInfo
 import kotlinx.android.synthetic.main.item_info_place.view.*
 
 class PlaceInfoAdapter: RecyclerView.Adapter<PlaceInfoAdapter.PlaceInfoViewHolder>() {
+    interface ItemClick {
+        fun onClick(v: View, position: Int)
+    }
+
+    var itemClick: ItemClick? = null
 
     var items = ArrayList<TheaterInfo>()
 
@@ -24,6 +29,12 @@ class PlaceInfoAdapter: RecyclerView.Adapter<PlaceInfoAdapter.PlaceInfoViewHolde
                 bind(it)
             }
         }
+
+        if(itemClick != null) {
+            holder?.itemView?.setOnClickListener { v ->
+                itemClick?.onClick(v, position)
+            }
+        }
     }
 
     class PlaceInfoViewHolder(val view: View): RecyclerView.ViewHolder(view) {
@@ -32,7 +43,7 @@ class PlaceInfoAdapter: RecyclerView.Adapter<PlaceInfoAdapter.PlaceInfoViewHolde
                 info_place_placeName_tv.text = item.theaterName
                 info_place_address_tv.text = item.location
                 info_place_callNumber_tv.text = item.phoneNumber
-                Glide.with(view).load(item.theaterImage).into(info_place_placeImage_iv)
+                Glide.with(view).load(item.theaterImage).centerCrop().into(info_place_placeImage_iv)
             }
         }
     }
