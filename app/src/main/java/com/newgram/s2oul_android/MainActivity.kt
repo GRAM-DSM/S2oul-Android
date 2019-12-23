@@ -1,6 +1,7 @@
 package com.newgram.s2oul_android
 
 import android.os.Bundle
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.newgram.s2oul_android.info.InfoFragment
@@ -14,6 +15,8 @@ import org.jetbrains.anko.startActivity
 class MainActivity : AppCompatActivity() {
 
     var fragmentManager = supportFragmentManager
+
+    private var backPressedTime : Long = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -49,5 +52,18 @@ class MainActivity : AppCompatActivity() {
         }
         false
 
+    }
+
+    override fun onBackPressed() {
+        //super.onBackPressed()
+
+        if (System.currentTimeMillis() > backPressedTime + 2000) {
+            backPressedTime = System.currentTimeMillis()
+            Toast.makeText(this, "뒤로 버튼을 한번 더 누르면 종료됩니다", Toast.LENGTH_SHORT).show()
+            return
+        }
+        if (System.currentTimeMillis() <= backPressedTime + 2000) {
+            super.onBackPressed()
+        }
     }
 }

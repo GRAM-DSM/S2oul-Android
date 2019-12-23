@@ -6,5 +6,22 @@ data class ShowInfo(
     var period: String,
     var theaterName: String,
     var showAge: String,
-    var showId: String
-)
+    var showId: Int
+) {
+//    override fun toString(): String {
+//        return "{" +
+//
+//                "showImage='" + "${showImage}" + '\'' +
+//
+//                ", showName='" + showName + '\'' +
+//
+//                ", period='" + period + '\'' +
+//
+//                ", theaterName='" + theaterName + '\'' +
+//
+//                ", showAge='" + showAge + '\'' +
+//
+//                ", showId" + showId +
+//                '}'
+//    }
+}
