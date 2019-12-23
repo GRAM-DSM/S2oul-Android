@@ -16,14 +16,20 @@ class SearchResultActivity : AppCompatActivity() {
 
     private val REQUEST_ACT = 1
 
+    val showSearchFragment = ShowSearchFragment()
+    val theaterSearchFragment = TheaterSearchFragment()
+    var bundle = Bundle(1)
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_result_detail)
 
         search_et.setText(intent.getStringExtra("word"))
         supportFragmentManager.beginTransaction().run {
+            bundle.putString("word", intent.getStringExtra("word"))
+            showSearchFragment.arguments(bundle)
             replace(
-               R.id.search_detail_frame, ShowSearchFragment()
+               R.id.search_detail_frame, showSearchFragment
             ).commit()
         }
 
@@ -57,6 +63,7 @@ class SearchResultActivity : AppCompatActivity() {
         val transaction = supportFragmentManager.beginTransaction()
         when(item.checkedRadioButtonId) {
             R.id.search_show_radio -> {
+                showSearchFragment.arguments(bundle)
                 transaction.replace(
                    R.id.search_detail_frame,
                     ShowSearchFragment()
@@ -65,6 +72,7 @@ class SearchResultActivity : AppCompatActivity() {
                 return@OnCheckedChangeListener
             }
             R.id.search_place_radio -> {
+                theaterSearchFragment.arguments(bundle)
                 transaction.replace(
                     R.id.search_detail_frame,
                     TheaterSearchFragment()
@@ -77,5 +85,9 @@ class SearchResultActivity : AppCompatActivity() {
         false
     }
 
+
+}
+
+private operator fun Bundle?.invoke(bundle: Bundle) {
 
 }

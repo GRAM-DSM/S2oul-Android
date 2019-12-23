@@ -73,10 +73,9 @@ class MapFragment : Fragment(), OnMapReadyCallback {
         //구글 맵 객체 불러오기!
         this.googleMap = googleMap
 
-        // 마커 위치 설정 Add a marker in Sydney and move the camer
         val dsm = LatLng(36.391442, 127.363347)
 
-        googleMap.addMarker(MarkerOptions().position(dsm).title("대마고에 마커를 표시했습니다!")) //Marker in Sydney
+        googleMap.addMarker(MarkerOptions().position(dsm).title("현재 위치입니다!"))
         googleMap.moveCamera(CameraUpdateFactory.newLatLng(dsm))
 
     }
