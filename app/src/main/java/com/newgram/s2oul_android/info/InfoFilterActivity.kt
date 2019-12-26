@@ -28,6 +28,7 @@ class InfoFilterActivity : AppCompatActivity() {
 //            finish()
             Log.d("안뇽", "${(info_filter_all_radio.id)}")
             Log.d("현재 포커스","${currentFocus.id}")
+            finish()
         }
 
         info_filter_cancel_iv.onClick {

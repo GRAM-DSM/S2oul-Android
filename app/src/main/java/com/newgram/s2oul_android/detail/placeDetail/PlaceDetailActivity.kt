@@ -13,6 +13,7 @@ import com.newgram.s2oul_android.detail.showDetail.ShowDetailActivity
 import com.newgram.s2oul_android.entity.Show
 import com.newgram.s2oul_android.entity.TheaterDetail
 import kotlinx.android.synthetic.main.activity_place_detail.*
+import org.jetbrains.anko.sdk27.coroutines.onClick
 import org.jetbrains.anko.startActivity
 import org.json.JSONArray
 import java.nio.charset.Charset
@@ -50,6 +51,10 @@ class PlaceDetailActivity : AppCompatActivity(), PlaceDetailContract.View {
         placeDetail_rv.adapter = adapter
         placeDetail_rv.layoutManager = LinearLayoutManager(this, RecyclerView.HORIZONTAL, false)
         adapter.notifyDataSetChanged()
+
+        placeDetail_cancel_iv.onClick {
+            finish()
+        }
     }
 
     override fun showPlaceDetail(theater: TheaterDetail) {

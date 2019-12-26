@@ -45,6 +45,9 @@ class ShowDetailActivity : AppCompatActivity(), ShowDetailContract.View {
             goTicketLink(uri)
         }
 
+        showDetail_cancel_iv.onClick {
+            finish()
+        }
     }
 
     override fun showShowDetail(show: ShowDetail) {

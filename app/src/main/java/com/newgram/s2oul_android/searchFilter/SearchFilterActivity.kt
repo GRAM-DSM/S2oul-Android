@@ -28,6 +28,7 @@ class SearchFilterActivity : AppCompatActivity() {
 //            finish()
             Log.d("안뇽", "${(search_filter_all_radio.id)}")
             Log.d("현재 포커스","${currentFocus.id}")
+            finish()
         }
 
         search_filter_cancel_iv.onClick {

@@ -11,11 +11,15 @@
             android:id="@+id/info_frame"
             android:layout_width="0dp"
             android:layout_height="0dp"
-            app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="12dp"
-            android:layout_marginEnd="12dp" app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent" android:layout_marginTop="40dp"
-            app:layout_constraintTop_toBottomOf="@+id/info_radio_group" app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintVertical_bias="0.0"/>
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginEnd="24dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/info_radio_group"
+            app:layout_constraintVertical_bias="0.0" />
 
     <RadioGroup
             android:id="@+id/info_radio_group"

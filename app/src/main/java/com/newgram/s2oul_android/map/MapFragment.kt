@@ -53,41 +53,35 @@ class MapFragment : Fragment(), OnMapReadyCallback {
         locationInit()
     }
 
-
     private fun locationInit() {
         fusedLocationProviderClient = FusedLocationProviderClient(this.requireActivity())
-
         locationCallback = MyLocationCallBack()
-
         locationRequest = LocationRequest()
 
         //GPS 우선
         locationRequest.priority = LocationRequest.PRIORITY_HIGH_ACCURACY
-
         locationRequest.interval = 10000
-
         locationRequest.fastestInterval = 5000
     }
 
     override fun onMapReady(googleMap: GoogleMap) {
-        //구글 맵 객체 불러오기!
         this.googleMap = googleMap
 
         val dsm = LatLng(36.391442, 127.363347)
 
         googleMap.addMarker(MarkerOptions().position(dsm).title("현재 위치입니다!"))
-        googleMap.moveCamera(CameraUpdateFactory.newLatLng(dsm))
+        //googleMap.moveCamera(CameraUpdateFactory.newLatLng(dsm))
+        googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(dsm, 12f))
 
+        googleMap.isMyLocationEnabled = true
     }
 
     override fun onResume() {
         super.onResume()
 
-        //권한요청
         permissionCheck(cancel = {
             showPermissionInfoDialog()
         }, ok = {
-            //현재 위치를 주기적으로 요청
             addLocationListener()
         })
     }
@@ -109,29 +103,22 @@ class MapFragment : Fragment(), OnMapReadyCallback {
                 //mapView.animateCamera(CameraUpdateFactory.newLatLngZoom(latLng, 17f))
 
                 Log.d("MapsActivity", "위도: $latitude, 경도: $longitude")
-
-                //자기위치 표시
-                //mapView.isMyLocationEnabled = true
             }
+
         }
     }
 
     private fun permissionCheck(cancel: () -> Unit, ok:() -> Unit) {
-        //위치 권한 있는지 검사 //this context!!
         if (ContextCompat.checkSelfPermission(context!!, Manifest.permission.ACCESS_FINE_LOCATION) !=
             PackageManager.PERMISSION_GRANTED) {
-            //권한 허용 X
             if (ActivityCompat.shouldShowRequestPermissionRationale(this.requireActivity(),
                     Manifest.permission.ACCESS_FINE_LOCATION)) {
-                //이전에 권한을 한번 거부한 적이 있을때 실행
                 cancel()
             } else {
-                //권한 요청
                 ActivityCompat.requestPermissions(this.requireActivity(), arrayOf(Manifest.permission.ACCESS_FINE_LOCATION),
                     REQUEST_ACCESS_FINE_LOCATION)
             }
         } else {
-            //권한 수락했을때 실행
             ok()
         }
     }
@@ -152,10 +139,8 @@ class MapFragment : Fragment(), OnMapReadyCallback {
         when (requestCode) {
             REQUEST_ACCESS_FINE_LOCATION -> {
                 if ((grantResults.isNotEmpty() && grantResults[0] == PackageManager.PERMISSION_GRANTED)) {
-                    //권한 허용 시
                     addLocationListener()
                 } else {
-                    //권한 거부 시
                     toast("권한 거부 됨")
                 }
                 return
@@ -163,10 +148,8 @@ class MapFragment : Fragment(), OnMapReadyCallback {
         }
     }
 
-
     override fun onPause() {
         super.onPause()
-
         removeLocationLister()
     }
 
